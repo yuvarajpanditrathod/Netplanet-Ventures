@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netplanet Ventures | Premium Mosquito Screens, Nets & Blinds</title>
+  <link rel="icon" type="image/png" href="/Assets/Logo.jpeg" sizes="200x200">
+  <link rel="apple-touch-icon" href="/Assets/Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      background-size: 1000px 100%;
+      animation: shimmer 3s infinite;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .gradient-border {
+      position: relative;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #0EA5E9, #06B6D4, #14B8A6) border-box;
+      border: 2px solid transparent;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: marquee 29s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-container:hover .marquee-track {
+      animation-play-state: paused;
+      cursor: grab;
+    }
+
+    .marquee-fade:before,
+    .marquee-fade:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .marquee-fade:before {
+      left: 0;
+      background: linear-gradient(90deg, #f8fafc, rgba(248, 250, 252, 0));
+    }
+
+    .marquee-fade:after {
+      right: 0;
+      background: linear-gradient(270deg, #f8fafc, rgba(248, 250, 252, 0));
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#06B6D4',
+            accent: '#14B8A6',
+            dark: '#0F172A',
+            darker: '#020617',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans text-slate-900 bg-white antialiased">
+
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 font-semibold text-xl text-dark">
+          <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-14 w-15 rounded-full object-cover">
+          <span>Netplanet Ventures</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <a href="about.html" class="hover:text-primary transition">About</a>
+          <a href="products.html" class="hover:text-primary transition">Products</a>
+          <a href="showroom.html" class="hover:text-primary transition">Showroom</a>
+          <a href="gallery.html" class="hover:text-primary transition">Gallery</a>
+          <a href="why-us.html" class="hover:text-primary transition">Why Choose Us</a>
+          <a href="contact.html" class="hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">Book
+            a Visit <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <button id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-slate-200 text-dark"
+          aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white shadow-sm">
+      <nav class="px-4 py-4 space-y-3 text-sm font-medium">
+        <a href="index.html" class="block">Home</a>
+        <a href="about.html" class="block">About</a>
+        <a href="products.html" class="block">Products</a>
+        <a href="showroom.html" class="block">Showroom</a>
+        <a href="gallery.html" class="block">Gallery</a>
+        <a href="why-us.html" class="block">Why Choose Us</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white">Get a
+          Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-darker via-dark to-slate-900">
+    <!-- Animated Background -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 left-20 h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-glow"></div>
+      <div class="absolute bottom-20 right-20 h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-glow"
+        style="animation-delay: 1s;"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-secondary/20 blur-3xl animate-glow"
+        style="animation-delay: 2s;"></div>
+      <div
+        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30">
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8 animate-float">
+          <div
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass border border-white/20 text-white shadow-2xl">
+            <div class="h-2 w-2 rounded-full bg-accent animate-pulse"></div>
+            <span class="text-xs font-semibold uppercase tracking-wider">Premium · Bespoke · Engineered</span>
+          </div>
+
+          <h1 class="font-display font-bold text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1]">
+            Architectural
+            <span class="block text-gradient mt-2">Protection</span>
+            <span class="block text-white/90">Perfected</span>
+          </h1>
+
+          <p class="text-lg lg:text-xl text-slate-300 leading-relaxed max-w-xl">
+            Experience the pinnacle of precision-engineered mosquito screens, nets, and blinds. Where meticulous
+            craftsmanship meets contemporary design.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="contact.html"
+              class="group relative px-8 py-4 rounded-xl text-base font-semibold text-white overflow-hidden shadow-2xl transition-all hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+              <span class="relative flex items-center gap-3">
+                Schedule Consultation
+                <i class="fa-solid fa-calendar-check group-hover:scale-110 transition-transform"></i>
+              </span>
+            </a>
+            <a href="#categories"
+              class="px-8 py-4 rounded-xl text-base font-semibold text-white glass border border-white/20 hover:bg-white/10 transition-all flex items-center gap-3">
+              Explore Collection
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 pt-8">
+            <div
+              class="glass border border-white/10 rounded-2xl p-4 text-center hover:border-primary/50 transition-all">
+              <div class="text-3xl font-bold text-white">5K+</div>
+              <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Installations</div>
+            </div>
+            <div
+              class="glass border border-white/10 rounded-2xl p-4 text-center hover:border-primary/50 transition-all">
+              <div class="text-3xl font-bold text-white">6+</div>
+              <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Years Legacy</div>
+            </div>
+            <div
+              class="glass border border-white/10 rounded-2xl p-4 text-center hover:border-primary/50 transition-all">
+              <div class="text-3xl font-bold text-white">4.9 ★</div>
+              <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Client Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-20">
+          </div>
+          <div class="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80"
+              alt="Luxury living space" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+
+          <div class="absolute -bottom-6 -left-6 glass border border-white/20 rounded-2xl p-6 shadow-2xl max-w-xs">
+            <div class="flex items-center gap-4">
+              <div
+                class="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+                <i class="fa-solid fa-award text-2xl"></i>
+              </div>
+              <div>
+                <div class="text-white font-bold text-lg">ISO Certified</div>
+                <div class="text-slate-400 text-sm">Premium Quality Assured</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute -top-6 -right-6 rounded-2xl p-5 shadow-2xl border border-slate-200/80 bg-white/95 backdrop-blur">
+            <div class="flex items-center gap-3">
+              <div
+                class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+                <i class="fa-solid fa-stopwatch"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 uppercase tracking-wider">Lead Time</div>
+                <div class="text-dark font-bold text-xl">48 Hours</div>
+                <div class="text-slate-500 text-xs mt-1">Site Survey</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Strip -->
+  <section class="py-6 bg-gradient-to-r from-primary via-secondary to-accent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-white">
+        <div class="flex items-center gap-4">
+          <i class="fa-solid fa-shield-halved text-3xl opacity-80"></i>
+          <div>
+            <div class="font-bold">Marine-Grade</div>
+            <div class="text-xs opacity-90">Premium Materials</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa-solid fa-ruler-combined text-3xl opacity-80"></i>
+          <div>
+            <div class="font-bold">Precision Fit</div>
+            <div class="text-xs opacity-90">Custom Fabricated</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa-solid fa-screwdriver-wrench text-3xl opacity-80"></i>
+          <div>
+            <div class="font-bold">Expert Install</div>
+            <div class="text-xs opacity-90">Certified Teams</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <i class="fa-solid fa-headset text-3xl opacity-80"></i>
+          <div>
+            <div class="font-bold">Lifetime Support</div>
+            <div class="text-xs opacity-90">After-Sales Care</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Intro -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
+            <i class="fa-solid fa-sparkles"></i>
+            <span class="text-sm font-semibold uppercase tracking-wider">Engineered Excellence</span>
+          </div>
+
+          <h2 class="font-display font-bold text-5xl lg:text-6xl text-dark leading-tight">
+            Where Design Meets
+            <span class="block text-gradient mt-2">Uncompromising Quality</span>
+          </h2>
+
+          <p class="text-lg text-slate-600 leading-relaxed">
+            At Netplanet Ventures, we don't just install screens—we architect solutions. Each project begins in our
+            premium showroom, where you experience materials, mechanisms, and finishes firsthand before we craft your
+            bespoke installation.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-4">
+            <div
+              class="p-6 rounded-2xl border border-slate-200 hover:border-primary/50 hover:shadow-xl transition-all group">
+              <div
+                class="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-flask text-xl"></i>
+              </div>
+              <h3 class="font-bold text-lg text-dark mb-2">Climate Engineered</h3>
+              <p class="text-sm text-slate-600">Corrosion-resistant alloys and UV-stable meshes designed for India's
+                demanding climate.</p>
+            </div>
+
+            <div
+              class="p-6 rounded-2xl border border-slate-200 hover:border-primary/50 hover:shadow-xl transition-all group">
+              <div
+                class="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-compass-drafting text-xl"></i>
+              </div>
+              <h3 class="font-bold text-lg text-dark mb-2">Precision Process</h3>
+              <p class="text-sm text-slate-600">Detailed site surveys, custom fabrication, and meticulous installation
+                by certified professionals.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl"></div>
+          <div class="relative aspect-[3/4] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1523419400524-220c0c79927f?auto=format&fit=crop&w=1200&q=80"
+              alt="Craftsperson at work" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Categories -->
+  <section class="py-24 bg-gradient-to-b from-slate-50 to-white" id="categories">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-6 mb-12">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <divs
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-3">
+              <span class="text-sm font-semibold uppercase tracking-wider">Premium Collection</span>
+            </divs>
+            <h2 class="font-display font-bold text-4xl lg:text-5xl text-dark leading-tight">
+              Meticulously Crafted <span class="block text-gradient">Solutions</span>
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mt-3">Every product in our collection represents the pinnacle of
+              engineering, design, and craftsmanship.</p>
+            <p class="text-sm text-slate-500 max-w-3xl">
+              Explore magnetic mosquito net for doors, sliding mosquito net for windows, insect netting for windows,
+              mosquito mesh for balconies and doors, collapsible mosquito net options, pigeon net installation, and
+              aluminium windows and doors solutions alongside ceiling-mounted cloth drying racks and pulley
+              systems—everything tailored for breathable, pest-safe ventilation.
+            </p>
+          </div>
+          <a href="products.html"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">View
+            more products <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="overflow-hidden">
+          <div id="product-slider" class="flex transition-transform duration-500 ease-out">
+            <div class="w-full shrink-0 px-4 sm:px-6 lg:px-8 py-6">
+              <div class="grid md:grid-cols-3 gap-8">
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Glide-Fit.png" alt="Sliding Systems"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-window-restore"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Sliding Nets</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Glide Fit</h3>
+                    <p class="text-slate-600 leading-relaxed">Smooth, low-friction mosquito nets for wide balcony
+                      sliders and patio doors with high-visibility mesh.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Low-Friction</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Custom
+                        Sized</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Wind
+                        Stable</span>
+                    </div>
+                    <a href="/blog/glide-fit.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Ace-Window.jpeg" alt="Hinged Nets"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-door-open"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Hinged Nets</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Ace Window</h3>
+                    <p class="text-slate-600 leading-relaxed">Hinged mosquito nets with multi-lock latches for daily
+                      ventilation, easy cleaning, and secure sealing.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Multi-Lock</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Quick
+                        Clean</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Color
+                        Match</span>
+                    </div>
+                    <a href="/blog/ace-window.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Glossy-Roll-Fit.png" alt="Roller Nets"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-scroll"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Roller Nets</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Glossy Roll Fit</h3>
+                    <p class="text-slate-600 leading-relaxed">Smooth retractable mosquito mesh for windows with sleek
+                      housings and quick lift-lower controls.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Retractable</span>
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Compact</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Tidy
+                        Finish</span>
+                    </div>
+                    <a href="/blog/glossy-roll-fit.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="w-full shrink-0 px-4 sm:px-6 lg:px-8 py-6">
+              <div class="grid md:grid-cols-3 gap-8">
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Crease-Fit-Plated.png" alt="Crease Fit Pleated"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Crease Fit Pleated</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Crease Fit Pleated</h3>
+                    <p class="text-slate-600 leading-relaxed">Elegant pleated mosquito screens for wide spans, gliding
+                      smoothly with concertina folding.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Wide
+                        Spans</span>
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Child-Safe</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Low
+                        Profile</span>
+                    </div>
+                    <a href="/blog/crease-fit-pleated.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Crease-Fit-Ditto.png" alt="Crease Fit Ditto"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-border-all"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Crease Fit Ditto</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Crease Fit Ditto</h3>
+                    <p class="text-slate-600 leading-relaxed">Dual-sash pleated screens for extra width, balanced
+                      tension, and smooth stacking.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Dual
+                        Sash</span>
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Balanced</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Smooth
+                        Glide</span>
+                    </div>
+                    <a href="/blog/crease-fit-ditto.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Magnetic-Fit.png" alt="Magnetic Fit"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-magnet"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Magnetic Fit</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Magnetic Fit</h3>
+                    <p class="text-slate-600 leading-relaxed">Magnetic mosquito screens with quick snap-on frames for
+                      easy cleaning and daily use.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Tool-Free</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Quick
+                        Clean</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Tight
+                        Seal</span>
+                    </div>
+                    <a href="/blog/magnetic-fit.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="w-full shrink-0 px-4 sm:px-6 lg:px-8 py-6">
+              <div class="grid md:grid-cols-3 gap-8">
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Ace-Door.png" alt="Ace Door"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-door-closed"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Ace Door</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Ace Door</h3>
+                    <p class="text-slate-600 leading-relaxed">Heavy-duty mosquito door systems with smooth hinges, tight
+                      seals, and sleek profiles.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Heavy-Duty</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Smooth
+                        Swing</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Slim
+                        Frame</span>
+                    </div>
+                    <a href="/blog/ace-door.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Classic-Window-Openable-Fit.jpeg" alt="Classic Window Openable Fit"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Classic Window</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Classic Window Openable Fit</h3>
+                    <p class="text-slate-600 leading-relaxed">Openable framed mosquito screens for classic windows,
+                      built for daily tilt-and-clean convenience.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Openable</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Easy
+                        Clean</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Secure
+                        Latch</span>
+                    </div>
+                    <a href="/blog/classic-window-openable-fit.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+
+                <article
+                  class="group card-hover rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl">
+                  <div class="relative h-72 overflow-hidden bg-white flex items-center justify-center">
+                    <img src="Assets/Product-Photo/Box-Frame-with-Classic-Window-Fixed-Fit.png"
+                      alt="Box Frame with Classic Window - Fixed Fit"
+                      class="w-full h-full object-contain scale-[1.03] transition-transform duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                      <div class="flex items-center gap-3 text-white mb-3">
+                        <div
+                          class="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                          <i class="fa-solid fa-vector-square"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest">Box Frame Fixed</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 space-y-4">
+                    <h3 class="font-display font-bold text-2xl text-dark">Box Frame with Classic Window - Fixed Fit</h3>
+                    <p class="text-slate-600 leading-relaxed">Rigid fixed-fit mosquito screens mounted on box frames for
+                      classic windows and ventilators.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Rigid
+                        Frame</span>
+                      <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Vent
+                        Ready</span>
+                      <span
+                        class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Durable</span>
+                    </div>
+                    <a href="/blog/box-frame-fixed-fit.html"
+                      class="inline-flex items-center gap-2 text-primary font-semibold text-sm group/link pt-2">Explore
+                      Details <i
+                        class="fa-solid fa-arrow-right group-hover/link:translate-x-1 transition-transform"></i></a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="product-prev" aria-label="Previous products"
+          class="absolute left-2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center text-dark hover:text-primary hover:border-primary transition">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="product-next" aria-label="Next products"
+          class="absolute right-2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center text-dark hover:text-primary hover:border-primary transition">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 bg-gradient-to-br from-darker via-dark to-slate-900 text-white relative overflow-hidden"
+    id="why">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-glow"></div>
+      <div class="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-accent/20 blur-3xl animate-glow"
+        style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/20 mb-6">
+          <span class="text-sm font-semibold uppercase tracking-wider">The Netplanet Advantage</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl lg:text-5xl mb-4">
+          Engineered Excellence,
+          <span class="block text-gradient mt-2">Delivered Flawlessly</span>
+        </h2>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+          Experience the difference that comes from unwavering commitment to quality, precision, and client
+          satisfaction.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group card-hover p-8 rounded-2xl glass border border-white/10 shadow-2xl">
+          <div
+            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-primary/50">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Premium Materials</h3>
+          <p class="text-slate-300 leading-relaxed">
+            Powder-coated aluminum, marine-grade meshes, and German mechanisms engineered for decades of use.
+          </p>
+        </div>
+
+        <div class="group card-hover p-8 rounded-2xl glass border border-white/10 shadow-2xl">
+          <div
+            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-primary/50">
+            <i class="fa-solid fa-ruler-combined"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Precision Fabrication</h3>
+          <p class="text-slate-300 leading-relaxed">
+            Millimeter-perfect measurements, CNC-cut components, and custom assembly for every installation.
+          </p>
+        </div>
+
+        <div class="group card-hover p-8 rounded-2xl glass border border-white/10 shadow-2xl">
+          <div
+            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-primary/50">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Expert Installation</h3>
+          <p class="text-slate-300 leading-relaxed">
+            Certified professionals with 10+ years experience, dust-controlled processes, and meticulous finishing.
+          </p>
+        </div>
+
+        <div class="group card-hover p-8 rounded-2xl glass border border-white/10 shadow-2xl">
+          <div
+            class="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-primary/50">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Lifetime Support</h3>
+          <p class="text-slate-300 leading-relaxed">
+            Comprehensive warranty, regular maintenance visits, and 24/7 support for complete peace of mind.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="why-us.html"
+          class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-dark font-semibold hover:scale-105 transition-transform shadow-2xl">
+          Discover Our Process
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium CTA -->
+  <section class="py-24 bg-white" id="cta">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
+        <div class="grid lg:grid-cols-2">
+          <div
+            class="relative p-12 lg:p-16 bg-gradient-to-br from-primary via-secondary to-accent text-white overflow-hidden">
+            <div class="absolute top-0 right-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+
+            <div class="relative space-y-6">
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white border border-white/30 text-xs font-semibold uppercase tracking-wider">
+                Experience Center
+              </div>
+
+              <h2 class="font-display font-bold text-4xl lg:text-5xl leading-tight">
+                Visit Our Premium Showroom
+              </h2>
+
+              <p class="text-lg text-white/90 leading-relaxed">
+                Experience our complete range of materials, mechanisms, and finishes. Our specialists will guide you
+                through options tailored to your architectural requirements.
+              </p>
+
+              <div class="space-y-3 pt-4">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-white/20 flex items-center justify-center">
+                    <i class="fa-solid fa-check text-xl"></i>
+                  </div>
+                  <span class="font-medium">Live product demonstrations</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-white/20 flex items-center justify-center">
+                    <i class="fa-solid fa-check text-xl"></i>
+                  </div>
+                  <span class="font-medium">Material comparison & selection</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-white/20 flex items-center justify-center">
+                    <i class="fa-solid fa-check text-xl"></i>
+                  </div>
+                  <span class="font-medium">On-spot quotations & planning</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-4 pt-6">
+                <a href="showroom.html"
+                  class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-primary font-semibold shadow-xl hover:scale-105 transition-transform">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Plan Your Visit
+                </a>
+                <a href="contact.html"
+                  class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-all">
+                  <i class="fa-solid fa-phone"></i>
+                  Request Callback
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-12 lg:p-16 bg-gradient-to-br from-slate-50 to-white">
+            <div class="space-y-6">
+              <h3 class="font-display font-bold text-2xl text-dark">By The Numbers</h3>
+
+              <div class="grid grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-lg">
+                  <div
+                    class="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                    48hrs</div>
+                  <div class="text-sm text-slate-600 font-medium">Site survey scheduling</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-lg">
+                  <div
+                    class="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                    10+</div>
+                  <div class="text-sm text-slate-600 font-medium">Years per installer</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-lg">
+                  <div
+                    class="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                    50+</div>
+                  <div class="text-sm text-slate-600 font-medium">Material variants</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-lg">
+                  <div
+                    class="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                    100%</div>
+                  <div class="text-sm text-slate-600 font-medium">Custom fabricated</div>
+                </div>
+              </div>
+
+              <div class="pt-6 space-y-4">
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200">
+                  <i class="fa-solid fa-medal text-2xl text-primary mt-1"></i>
+                  <div>
+                    <h4 class="font-bold text-dark mb-1">ISO Certified Quality</h4>
+                    <p class="text-sm text-slate-600">International standards in manufacturing and installation</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200">
+                  <i class="fa-solid fa-clock text-2xl text-primary mt-1"></i>
+                  <div>
+                    <h4 class="font-bold text-dark mb-1">Rapid Deployment</h4>
+                    <p class="text-sm text-slate-600">From consultation to installation in record time</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-xs text-slate-500 pt-4 italic">*Timelines may vary based on project complexity and location
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-24 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
+          <span class="text-sm font-semibold uppercase tracking-wider">Client Testimonials</span>
+        </div>
+        <h2 class="font-display font-bold text-4xl lg:text-5xl text-dark mb-3">
+          Trusted by Thousands
+        </h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">A continuous stream of client stories from luxury homes, design
+          studios, and commercial builds.</p>
+      </div>
+
+      <div class="marquee-container marquee-fade">
+        <div class="marquee-track">
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/men-icon-trendy-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-male-portraits-group-team-adorable-guys-isolated-white-background_275421-281.jpg"
+                alt="Portrait of Rajesh Sharma" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Rajesh Sharma</div>
+                <div class="text-xs text-slate-500">Homeowner · Bangalore</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "Exceptional quality and professional service. The screens disappear into the frames yet block every
+              mosquito. Worth every rupee!"
+            </p>
+          </div>
+
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/women-trendy-icon-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-female-portraits-group-team-adorable-girl-isolated-white-background_275421-279.jpg"
+                alt="Portrait of Priya Krishnan" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Priya Krishnan</div>
+                <div class="text-xs text-slate-500">Architect · Mumbai</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "Installed blinds across our entire office. Immaculate install, no mess, and the team finished ahead of
+              schedule."
+            </p>
+          </div>
+
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/men-icon-trendy-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-male-portraits-group-team-adorable-guys-isolated-white-background_275421-281.jpg"
+                alt="Portrait of Arun Mehta" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Arun Mehta</div>
+                <div class="text-xs text-slate-500">Builder · Pune</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "The showroom walkthrough helped us choose profiles and meshes confidently. Premium look, solid sealing."
+            </p>
+          </div>
+
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/women-trendy-icon-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-female-portraits-group-team-adorable-girl-isolated-white-background_275421-279.jpg"
+                alt="Portrait of Meera Patel" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Meera Patel</div>
+                <div class="text-xs text-slate-500">Interior Designer · Ahmedabad</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "We specified a minimalist look for a boutique project. The flush-fit frames and color-match were spot
+              on."
+            </p>
+          </div>
+
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/men-icon-trendy-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-male-portraits-group-team-adorable-guys-isolated-white-background_275421-281.jpg"
+                alt="Portrait of Karan Gupta" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Karan Gupta</div>
+                <div class="text-xs text-slate-500">Facility Manager · Gurgaon</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "Facility approvals were smooth because the team produced drawings, BOQs, and safety documentation
+              upfront."
+            </p>
+          </div>
+
+          <!-- Duplicate set for seamless marquee loop -->
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/men-icon-trendy-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-male-portraits-group-team-adorable-guys-isolated-white-background_275421-281.jpg"
+                alt="Portrait of Rajesh Sharma" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Rajesh Sharma</div>
+                <div class="text-xs text-slate-500">Homeowner · Bangalore</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "Exceptional quality and professional service. The screens disappear into the frames yet block every
+              mosquito. Worth every rupee!"
+            </p>
+          </div>
+
+          <div class="p-6 min-w-[240px] max-w-[280px] rounded-2xl bg-white border border-slate-200" aria-hidden="true">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="https://img.freepik.com/premium-vector/women-trendy-icon-avatar-character-cheerful-happy-people-flat-vector-illustration-round-frame-female-portraits-group-team-adorable-girl-isolated-white-background_275421-279.jpg"
+                alt="Portrait of Priya Krishnan" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              <div class="flex flex-col">
+                <div class="font-bold text-dark">Priya Krishnan</div>
+                <div class="text-xs text-slate-500">Architect · Mumbai</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 text-yellow-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-sm italic">
+              "Installed blinds across our entire office. Immaculate install, no mess, and the team finished ahead of
+              schedule."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Footer -->
+  <footer class="bg-gradient-to-br from-darker via-dark to-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative h-12 w-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-full w-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg">Netplanet Ventures</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest">Premium Solutions</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Engineering excellence in mosquito screens, nets, and blinds. Precision-crafted protection for discerning
+            homes and commercial spaces.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="products.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+            <li><a href="showroom.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Showroom</a></li>
+            <li><a href="gallery.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Gallery</a></li>
+            <li><a href="why-us.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Why Choose Us</a></li>
+            <li><a href="contact.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Our Products</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glide Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Pleated</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Ditto</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Magnetic Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Door</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glossy Roll Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Window</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Classic Window Openable
+              Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Box Frame with Classic
+              Window - Fixed Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Peigen Net</li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="font-bold text-lg">Get In Touch</h4>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3 text-slate-300">
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+              <span>G-A. 5 Preeti Ashiyana Complex, Shirur Park, Circle, Vidya Nagar, Hubballi, Karnataka 580021</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <span>+91 98453 56225</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <span>vishwa559@gmail.com</span>
+            </div>
+          </div>
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            Book a Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>&copy; 2026 Netplanet Ventures. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Add fade-in effect to cards
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    // Simple product slider
+    const slider = document.getElementById('product-slider');
+    const prevBtn = document.getElementById('product-prev');
+    const nextBtn = document.getElementById('product-next');
+    if (slider && prevBtn && nextBtn) {
+      const slides = slider.children.length;
+      let activeIndex = 0;
+
+      const goTo = (index) => {
+        activeIndex = (index + slides) % slides;
+        slider.style.transform = `translateX(-${activeIndex * 100}%)`;
+      };
+
+      prevBtn.addEventListener('click', () => goTo(activeIndex - 1));
+      nextBtn.addEventListener('click', () => goTo(activeIndex + 1));
+    }
+  </script>
+</body>
+
+</html>

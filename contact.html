@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Netplanet Ventures</title>
+  <link rel="icon" type="image/png" href="/Assets/Logo.jpeg" sizes="200x200">
+  <link rel="apple-touch-icon" href="/Assets/Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      background-size: 1000px 100%;
+      animation: shimmer 3s infinite;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .gradient-border {
+      position: relative;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #0EA5E9, #06B6D4, #14B8A6) border-box;
+      border: 2px solid transparent;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: marquee 29s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-container:hover .marquee-track {
+      animation-play-state: paused;
+      cursor: grab;
+    }
+
+    .marquee-fade:before,
+    .marquee-fade:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .marquee-fade:before {
+      left: 0;
+      background: linear-gradient(90deg, #f8fafc, rgba(248, 250, 252, 0));
+    }
+
+    .marquee-fade:after {
+      right: 0;
+      background: linear-gradient(270deg, #f8fafc, rgba(248, 250, 252, 0));
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#06B6D4',
+            accent: '#14B8A6',
+            dark: '#0F172A',
+            darker: '#020617',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans text-slate-900 bg-white antialiased">
+
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 font-semibold text-xl text-dark">
+          <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-14 w-15 rounded-full object-cover">
+          <span>Netplanet Ventures</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <a href="about.html" class="hover:text-primary transition">About</a>
+          <a href="products.html" class="hover:text-primary transition">Products</a>
+          <a href="showroom.html" class="hover:text-primary transition">Showroom</a>
+          <a href="gallery.html" class="hover:text-primary transition">Gallery</a>
+          <a href="why-us.html" class="hover:text-primary transition">Why Choose Us</a>
+          <a href="contact.html" class="hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">Book
+            a Visit <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <button id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-slate-200 text-dark"
+          aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white shadow-sm">
+      <nav class="px-4 py-4 space-y-3 text-sm font-medium">
+        <a href="index.html" class="block">Home</a>
+        <a href="about.html" class="block">About</a>
+        <a href="products.html" class="block">Products</a>
+        <a href="showroom.html" class="block">Showroom</a>
+        <a href="gallery.html" class="block">Gallery</a>
+        <a href="why-us.html" class="block">Why Choose Us</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white">Get a
+          Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 overflow-hidden hero-pattern">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl animate-float"
+        style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-6 max-w-4xl mx-auto">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+          </span>
+          <span class="text-sm font-medium">We're Available to Help</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-display font-bold leading-tight">
+          Let's Transform Your <span class="text-gradient">Space Together</span>
+        </h1>
+
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Connect with our expert team for personalized consultations, showroom visits, or on-site measurements tailored
+          to your project needs.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <a href="#contact-form"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-accent text-white font-semibold shadow-xl hover:scale-105 transition-transform">
+            Schedule Consultation <i class="fa-solid fa-calendar-check"></i>
+          </a>
+          <a href="#map"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition">
+            Find Showroom <i class="fa-solid fa-location-dot"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-dark">Multiple Ways to Connect</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">Choose the method that works best for you. Our team is ready
+          to assist.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="contact-card feature-card group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary hover:shadow-xl transition-all">
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-primary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div
+              class="relative h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center feature-icon">
+              <i class="fa-solid fa-phone text-2xl text-white"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Call Us</h3>
+          <p class="text-slate-600 text-sm mb-4">Speak directly with our team for immediate assistance</p>
+          <a href="tel:+919845356225"
+            class="text-primary font-semibold hover:text-secondary transition flex items-center gap-2">
+            +91 98453 56225 <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+
+        <div
+          class="contact-card feature-card group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-accent hover:shadow-xl transition-all">
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-accent/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div
+              class="relative h-16 w-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center feature-icon">
+              <i class="fa-solid fa-envelope text-2xl text-white"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Email Us</h3>
+          <p class="text-slate-600 text-sm mb-4">Send detailed inquiries and get comprehensive responses</p>
+          <a href="mailto:vishwa559@gmail.com"
+            class="text-accent font-semibold hover:text-primary transition flex items-center gap-2">
+            Send Message <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+
+        <div
+          class="contact-card feature-card group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-secondary hover:shadow-xl transition-all">
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-secondary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div
+              class="relative h-16 w-16 rounded-2xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center feature-icon">
+              <i class="fa-solid fa-location-dot text-2xl text-white"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Visit Showroom</h3>
+          <p class="text-slate-600 text-sm mb-4">Experience our products firsthand at our location</p>
+          <a href="#map" class="text-secondary font-semibold hover:text-primary transition flex items-center gap-2">
+            Get Directions <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+
+        <div
+          class="contact-card feature-card group p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary hover:shadow-xl transition-all">
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-primary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div
+              class="relative h-16 w-16 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center feature-icon">
+              <i class="fa-solid fa-clock text-2xl text-white"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Business Hours</h3>
+          <p class="text-slate-600 text-sm mb-4">Monday - Sunday</p>
+          <p class="text-dark font-semibold">10:00 AM - 9:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Form Section -->
+  <section class="py-20 bg-gradient-to-b from-slate-50 to-white" id="contact-form">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-12 items-start">
+
+        <!-- Left Content -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="space-y-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Secure & Confidential</span>
+            </div>
+            <h2 class="text-4xl font-display font-bold text-dark">Get a Free Consultation</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">Share your project details and our specialists will
+              provide tailored recommendations, accurate timelines, and transparent pricing within 24 hours.</p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
+                <i class="fa-solid fa-user-check text-primary group-hover:text-white transition"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-dark mb-1">Expert Guidance</h4>
+                <p class="text-sm text-slate-600">Personalized recommendations from experienced professionals</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all">
+                <i class="fa-solid fa-clock text-accent group-hover:text-white transition"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-dark mb-1">Quick Response</h4>
+                <p class="text-sm text-slate-600">Receive detailed responses within one business day</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 h-12 w-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all">
+                <i class="fa-solid fa-calendar-check text-secondary group-hover:text-white transition"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-dark mb-1">Flexible Scheduling</h4>
+                <p class="text-sm text-slate-600">Choose convenient times for consultations and site visits</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all">
+                <i class="fa-solid fa-shield-check text-primary group-hover:text-white transition"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-dark mb-1">Privacy Protected</h4>
+                <p class="text-sm text-slate-600">Your information is secure and never shared with third parties</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-lightbulb text-2xl text-primary mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-dark mb-2">Not sure what you need?</h4>
+                <p class="text-sm text-slate-600 mb-3">Schedule a showroom visit to explore our products and get expert
+                  advice in person.</p>
+                <a href="#map"
+                  class="text-sm text-primary font-semibold hover:text-secondary transition inline-flex items-center gap-2">
+                  View Showroom Location <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="lg:col-span-3">
+          <div class="relative">
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur opacity-20">
+            </div>
+            <div class="relative bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100">
+              <form id="contact-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-slate-800">Full Name *</label>
+                    <input type="text" name="name" required
+                      class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary"
+                      placeholder="John Doe" />
+                  </div>
+
+                  <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-slate-800">Phone Number *</label>
+                    <input type="tel" name="phone" required
+                      class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary"
+                      placeholder="+91 98765 43210" />
+                  </div>
+                </div>
+
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-slate-800">Email Address *</label>
+                  <input type="email" name="email" required
+                    class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary"
+                    placeholder="john@example.com" />
+                </div>
+
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-slate-800">Service Interest</label>
+                  <select name="service"
+                    class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 transition-all focus:border-primary">
+                    <option>Select a service</option>
+                    <option>Mosquito Screens & Nets</option>
+                    <option>Window & Door Screens</option>
+                    <option>Roller Blinds</option>
+                    <option>Vertical Blinds</option>
+                    <option>Zebra Blinds</option>
+                    <option>Other / General Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="space-y-2">
+                  <label class="block text-sm font-semibold text-slate-800">Project Details *</label>
+                  <textarea name="message" rows="5" required
+                    class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary resize-none"
+                    placeholder="Tell us about your project requirements, timeline, and any specific questions you have..."></textarea>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-slate-800">Preferred Contact Method</label>
+                    <div class="flex gap-4">
+                      <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="contact_method" value="phone" class="text-primary" checked />
+                        <span class="text-sm text-slate-700">Phone</span>
+                      </label>
+                      <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="contact_method" value="email" class="text-primary" />
+                        <span class="text-sm text-slate-700">Email</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-slate-800">Preferred Time</label>
+                    <select name="time"
+                      class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 transition-all focus:border-primary">
+                      <option>Morning (10 AM - 12 PM)</option>
+                      <option>Afternoon (12 PM - 4 PM)</option>
+                      <option>Evening (4 PM - 7 PM)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                  <i class="fa-solid fa-info-circle text-primary mt-0.5"></i>
+                  <p class="text-xs text-slate-600 leading-relaxed">By submitting this form, you agree to our privacy
+                    policy. We will contact you to schedule a showroom visit or arrange a site measurement based on your
+                    requirements.</p>
+                </div>
+
+                <button type="submit"
+                  class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all group">
+                  Submit Inquiry
+                  <i class="fa-solid fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                </button>
+
+                <p id="form-status"
+                  class="hidden text-center text-sm font-medium text-green-600 p-4 bg-green-50 rounded-xl border border-green-200">
+                  <i class="fa-solid fa-check-circle"></i> Thank you! We'll respond within 24 hours.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Map Section -->
+  <section class="py-20 bg-white" id="map">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-dark">Visit Our Showroom</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">Experience our premium products in person. Our showroom is
+          open for walk-ins and scheduled appointments.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 mb-12">
+        <div
+          class="p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+          <div
+            class="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6">
+            <i class="fa-solid fa-map-marker-alt text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Address</h3>
+          <p class="text-slate-600 leading-relaxed">G-A. 5 Preeti Ashiyana Complex, Shirur Park Circle, Vidya Nagar,
+            Hubballi, Karnataka 580021</p>
+        </div>
+
+        <div
+          class="p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-accent hover:shadow-lg transition-all">
+          <div
+            class="h-14 w-14 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6">
+            <i class="fa-solid fa-phone-volume text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Contact</h3>
+          <p class="text-slate-600 mb-2">Phone: <a href="tel:+919845356225"
+              class="text-primary font-semibold hover:text-secondary transition">+91 98453 56225</a></p>
+          <p class="text-slate-600">Email: <a href="mailto:vishwa559@gmail.com"
+              class="text-primary font-semibold hover:text-secondary transition">vishwa559@gmail.com</a></p>
+        </div>
+
+        <div
+          class="p-8 bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 hover:border-secondary hover:shadow-lg transition-all">
+          <div
+            class="h-14 w-14 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center mb-6">
+            <i class="fa-solid fa-clock text-2xl text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Working Hours</h3>
+          <p class="text-slate-600 mb-2">Monday - Saturday</p>
+          <p class="text-dark font-bold text-xl">10:00 AM - 9:00 PM</p>
+        </div>
+      </div>
+
+      <div class="relative rounded-3xl overflow-hidden border-2 border-slate-200 shadow-2xl">
+        <div class="absolute top-4 left-4 z-10 flex gap-2">
+          <a href="https://maps.google.com/?q=Netplanet+Ventures+Hubballi" target="_blank"
+            class="px-4 py-2 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 text-sm font-semibold text-dark hover:text-primary">
+            <i class="fa-solid fa-directions"></i>
+            Get Directions
+          </a>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.247284106717!2d75.11903717488862!3d15.363088285218744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d7b9481e1e83%3A0x4d09ba491dc646ec!2sNetplanet%20Ventures!5e0!3m2!1sen!2sin!4v1767712332624!5m2!1sen!2sin"
+          width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 space-y-4">
+        <h2 class="text-4xl font-display font-bold text-dark">Frequently Asked Questions</h2>
+        <p class="text-lg text-slate-600">Quick answers to common inquiries</p>
+      </div>
+
+      <div class="space-y-4">
+        <details
+          class="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-primary transition-all shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-dark">Do I need an appointment to visit the showroom?</h3>
+            <i class="fa-solid fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">Walk-ins are welcome during business hours, but we recommend
+            scheduling an appointment to ensure dedicated consultation time with our experts.</p>
+        </details>
+
+        <details
+          class="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-primary transition-all shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-dark">How long does it take to get a quote?</h3>
+            <i class="fa-solid fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">For standard inquiries, we provide detailed quotes within 24
+            hours. Complex projects requiring site measurements may take 2-3 business days.</p>
+        </details>
+
+        <details
+          class="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-primary transition-all shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-dark">Do you provide free site measurements?</h3>
+            <i class="fa-solid fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">Yes, we offer complimentary site measurements for projects
+            within our service area. Contact us to schedule a convenient time.</p>
+        </details>
+
+        <details
+          class="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-primary transition-all shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-dark">What areas do you serve?</h3>
+            <i class="fa-solid fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">We serve Hubballi, Dharwad, and surrounding areas. For
+            locations outside this region, please contact us to discuss service availability.</p>
+        </details>
+
+        <details
+          class="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-primary transition-all shadow-sm">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <h3 class="text-lg font-semibold text-dark">Can I see product samples before ordering?</h3>
+            <i class="fa-solid fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">Absolutely! Our showroom displays a wide range of products,
+            materials, and finishes. You can also request samples to take home for consideration.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section
+    class="py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <h2 class="text-3xl md:text-4xl font-display font-bold">Ready to Get Started?</h2>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto">Let's discuss your project and create the perfect solution for
+        your space.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact-form"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-dark font-semibold shadow-xl hover:scale-105 transition-transform">
+          Request Consultation <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="tel:+919845356225"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition">
+          <i class="fa-solid fa-phone"></i> +91 98453 56225
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Footer -->
+  <footer class="bg-gradient-to-br from-darker via-dark to-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative h-12 w-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-full w-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg">Netplanet Ventures</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest">Premium Solutions</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Engineering excellence in mosquito screens, nets, and blinds. Precision-crafted protection for discerning
+            homes and commercial spaces.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="products.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+            <li><a href="showroom.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Showroom</a></li>
+            <li><a href="gallery.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Gallery</a></li>
+            <li><a href="why-us.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Why Choose Us</a></li>
+            <li><a href="contact.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Our Products</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glide Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Pleated</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Ditto</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Magnetic Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Door</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glossy Roll Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Window</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Classic Window Openable
+              Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Box Frame with Classic
+              Window - Fixed Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Peigen Net</li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="font-bold text-lg">Get In Touch</h4>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3 text-slate-300">
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+              <span>G-A. 5 Preeti Ashiyana Complex, Shirur Park, Circle, Vidya Nagar, Hubballi, Karnataka 580021</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <span>+91 98453 56225</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <span>vishwa559@gmail.com</span>
+            </div>
+          </div>
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            Book a Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>&copy; 2026 Netplanet Ventures. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form submission handler
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Show success message
+        formStatus.classList.remove('hidden');
+
+        // Reset form
+        contactForm.reset();
+
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          formStatus.classList.add('hidden');
+        }, 5000);
+
+        // Scroll to success message
+        formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Add fade-in effect to elements
+    document.querySelectorAll('.contact-card, .feature-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    // Add stagger effect to FAQ items
+    document.querySelectorAll('details').forEach((detail, index) => {
+      detail.style.opacity = '0';
+      detail.style.transform = 'translateY(20px)';
+      detail.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      detail.style.transitionDelay = `${index * 0.1}s`;
+      observer.observe(detail);
+    });
+  </script>
+</body>
+
+</html>

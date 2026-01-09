@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Netplanet Ventures</title>
+  <link rel="icon" type="image/png" href="/Assets/Logo.jpeg" sizes="200x200">
+  <link rel="apple-touch-icon" href="/Assets/Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+    @keyframes glow { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-glow { animation: glow 3s ease-in-out infinite; }
+    .glass { background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); }
+    .card-hover { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#06B6D4',
+            accent: '#14B8A6',
+            dark: '#0F172A',
+            darker: '#020617',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-slate-900 bg-white antialiased">
+  <!-- Navbar copied from index -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 font-semibold text-xl text-dark">
+          <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-14 w-15 rounded-full object-cover">
+          <span>Netplanet Ventures</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <a href="about.html" class="text-primary font-semibold">About</a>
+          <a href="products.html" class="hover:text-primary transition">Products</a>
+          <a href="showroom.html" class="hover:text-primary transition">Showroom</a>
+          <a href="gallery.html" class="hover:text-primary transition">Gallery</a>
+          <a href="why-us.html" class="hover:text-primary transition">Why Choose Us</a>
+          <a href="contact.html" class="hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">Book a Visit <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <button id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-slate-200 text-dark"
+          aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200 bg-white shadow-sm">
+      <nav class="px-4 py-4 space-y-3 text-sm font-medium">
+        <a href="index.html" class="block">Home</a>
+        <a href="about.html" class="block text-primary font-semibold">About</a>
+        <a href="products.html" class="block">Products</a>
+        <a href="showroom.html" class="block">Showroom</a>
+        <a href="gallery.html" class="block">Gallery</a>
+        <a href="why-us.html" class="block">Why Choose Us</a>
+        <a href="contact.html" class="block">Contact</a>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white">Book a Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-darker via-dark to-slate-900 text-white">
+    <div class="absolute inset-0">
+      <div class="absolute top-16 left-10 h-80 w-80 rounded-full bg-primary/30 blur-3xl animate-glow"></div>
+      <div class="absolute bottom-24 right-8 h-96 w-96 rounded-full bg-secondary/25 blur-3xl animate-glow" style="animation-delay: 0.8s;"></div>
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-7 animate-float">
+          <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass border border-white/10 text-white shadow-xl">
+            <div class="h-2 w-2 rounded-full bg-accent animate-pulse"></div>
+            <span class="text-xs font-semibold uppercase tracking-[0.2em]">Inside Netplanet Ventures</span>
+          </div>
+          <h1 class="font-display text-5xl lg:text-6xl text-white leading-[1.1]">We build serene, sunlit spaces that stay protected.</h1>
+          <p class="text-lg text-slate-200 leading-relaxed max-w-2xl">From showroom consultation to precision installation, we engineer mosquito screens, nets, and blinds that respect architecture, climate, and everyday life. Our crews obsess over fit, finish, and follow-through so your spaces feel effortlessly secure.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="contact.html" class="group relative px-8 py-4 rounded-xl text-base font-semibold text-white overflow-hidden shadow-2xl transition-all hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+              <span class="relative flex items-center gap-3">Schedule a visit <i class="fa-solid fa-arrow-right-long group-hover:translate-x-1 transition-transform"></i></span>
+            </a>
+            <a href="showroom.html" class="px-8 py-4 rounded-xl text-base font-semibold text-white glass border border-white/20 hover:bg-white/10 transition-all flex items-center gap-3">Explore our showroom <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="grid grid-cols-3 gap-4 pt-6">
+            <div class="glass border border-white/10 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-bold text-white">5K+</div>
+              <div class="text-[11px] text-slate-300 uppercase tracking-wider">Installations</div>
+            </div>
+            <div class="glass border border-white/10 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-bold text-white">6+</div>
+              <div class="text-[11px] text-slate-300 uppercase tracking-wider">Years Legacy</div>
+            </div>
+            <div class="glass border border-white/10 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-bold text-white">4.9 ★</div>
+              <div class="text-[11px] text-slate-300 uppercase tracking-wider">Client Rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-6 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-25"></div>
+          <div class="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1500&q=80" alt="Installation team at work" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 glass rounded-2xl p-5 border border-white/10">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white"><i class="fa-solid fa-award text-xl"></i></div>
+                <div>
+                  <p class="text-white font-semibold">ISO-grade quality routines</p>
+                  <p class="text-slate-300 text-sm">Documented surveys, calibrated fabrication, and tidy handovers every time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="space-y-5">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-semibold uppercase tracking-[0.2em]">Our Story</div>
+        <h2 class="font-display text-4xl text-dark leading-tight">A showroom-first company that grew by keeping promises.</h2>
+        <p class="text-lg text-slate-700 leading-relaxed">Netplanet Ventures began as a boutique installer focused on mosquito screens that actually fit Indian homes. Today, we partner with architects, hoteliers, and homeowners across Karnataka—still obsessing over measurements, hardware, and finishes so every frame sits clean and works smoothly.</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl border border-slate-200 card-hover">
+            <p class="text-sm font-semibold text-primary">2018 — Foundation</p>
+            <p class="text-slate-700 text-sm">Set up our first fabrication pod and on-site survey crew.</p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200 card-hover">
+            <p class="text-sm font-semibold text-primary">2018 — Showroom</p>
+            <p class="text-slate-700 text-sm">Launched experience showroom so clients could see, feel, and compare systems.</p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200 card-hover">
+            <p class="text-sm font-semibold text-primary">2018 — Scale</p>
+            <p class="text-slate-700 text-sm">Expanded product stack with pleated sliders, roller blinds, and custom hardware.</p>
+          </div>
+          <div class="p-5 rounded-2xl border border-slate-200 card-hover">
+            <p class="text-sm font-semibold text-primary">Now — Forward</p>
+            <p class="text-slate-700 text-sm">Pursuing faster lead times, greener materials, and data-backed quality checks.</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/15 via-secondary/15 to-accent/15 blur-xl"></div>
+        <div class="relative bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-xl space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white"><i class="fa-solid fa-helmet-safety"></i></div>
+            <div>
+              <h3 class="font-semibold text-lg text-dark">Precision fabrication</h3>
+              <p class="text-slate-600 text-sm">Engineered measurements, CNC-cut profiles, and marine-grade finishes built to last in humid, coastal, and dusty conditions.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white"><i class="fa-solid fa-handshake-angle"></i></div>
+            <div>
+              <h3 class="font-semibold text-lg text-dark">People-first service</h3>
+              <p class="text-slate-600 text-sm">Transparent communication, tidy installs, respectful teams, and after-sales visits that keep your systems gliding.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white"><i class="fa-solid fa-leaf"></i></div>
+            <div>
+              <h3 class="font-semibold text-lg text-dark">Sustainable mindset</h3>
+              <p class="text-slate-600 text-sm">Long-life components, recyclable meshes, and thoughtful waste handling to minimize our footprint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-4 mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-primary border border-primary/20 text-xs font-semibold uppercase tracking-[0.2em]">Process</div>
+        <h2 class="font-display text-4xl text-dark leading-tight">A proven, showroom-led delivery playbook.</h2>
+        <p class="text-lg text-slate-700 max-w-3xl">Every build follows a documented sequence so you know where we are, what is next, and when your space will be ready.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">01</span>
+            <h3 class="font-semibold text-lg">Showroom consult</h3>
+          </div>
+          <p class="text-sm text-slate-600">Compare meshes, profiles, and fabrics in-person with our specialists.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">02</span>
+            <h3 class="font-semibold text-lg">On-site survey</h3>
+          </div>
+          <p class="text-sm text-slate-600">Laser measurements, obstruction checks, and hardware mapping.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="h-10 w-gallery.html rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">03</span>
+            <h3 class="font-semibold text-lg">Fabrication</h3>
+          </div>
+          <p class="text-sm text-slate-600">CNC-cut frames, tension-balanced mesh, and pre-hung checks before dispatch.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">04</span>
+            <h3 class="font-semibold text-lg">Installation & care</h3>
+          </div>
+          <p class="text-sm text-slate-600">Clean installs, handover walkthroughs, warranty registration, and scheduled service reminders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="space-y-4 lg:col-span-1">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-semibold uppercase tracking-[0.2em]">Why clients stay</div>
+        <h2 class="font-display text-4xl text-dark leading-tight">Architecture-friendly, climate-ready, people-first.</h2>
+        <p class="text-slate-700">Our systems are engineered for heavy use and harsh weather, but we never lose sight of the human experience—quiet glides, tidy installs, and proactive care.</p>
+      </div>
+      <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Specification support</h3>
+          <p class="text-slate-600 text-sm">Drawings, samples, and BOQs for architects and PMCs. We collaborate early to avoid site surprises.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Premium materials</h3>
+          <p class="text-slate-600 text-sm">Marine-grade aluminum, UV-stable meshes, and German-engineered hardware for long life.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Service you can reach</h3>
+          <p class="text-slate-600 text-sm">Dedicated coordinators, documented timelines, and responsive after-sales visits.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Safety & hygiene</h3>
+          <p class="text-slate-600 text-sm">Protected work areas, minimal dust, and courteous crews trained for premium interiors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-primary via-secondary to-accent text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div class="space-y-3">
+        <p class="uppercase tracking-[0.2em] text-xs font-semibold text-white/80">Let us plan your protection</p>
+        <h2 class="font-display text-3xl lg:text-4xl leading-tight">See every option in our showroom, then let us build the perfect fit.</h2>
+        <p class="text-slate-100 text-sm max-w-2xl">Bring your drawings, photos, or window sizes—we will map the right system, timeline, and budget in one visit.</p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="contact.html" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-dark font-semibold shadow-lg hover:-translate-y-0.5 transition-transform">Book a visit <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="products.html" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-white/50 text-white font-semibold hover:bg-white/10 transition">Browse products <i class="fa-solid fa-grid"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gradient-to-br from-darker via-dark to-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative h-12 w-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-full w-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg">Netplanet Ventures</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest">Premium Solutions</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Engineering excellence in mosquito screens, nets, and blinds. Precision-crafted protection for discerning
+            homes and commercial spaces.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="about.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="products.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+            <li><a href="showroom.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Showroom</a></li>
+            <li><a href="gallery.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Gallery</a></li>
+            <li><a href="why-us.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Why Choose Us</a></li>
+            <li><a href="contact.html"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Our Products</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glide Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Pleated</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Ditto</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Magnetic Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Door</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glossy Roll Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Window</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Classic Window Openable
+              Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Box Frame with Classic
+              Window - Fixed Fit</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Peigen Net</li>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="font-bold text-lg">Get In Touch</h4>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3 text-slate-300">
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+              <span>G-A. 5 Preeti Ashiyana Complex, Shirur Park, Circle, Vidya Nagar, Hubballi, Karnataka 580021</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <span>+91 98453 56225</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <span>vishwa559@gmail.com</span>
+            </div>
+          </div>
+          <a href="contact.html"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            Book a Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>&copy; 2026 Netplanet Ventures. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="disclaimer.html" class="hover:text-white transition-colors">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -30px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(18px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
