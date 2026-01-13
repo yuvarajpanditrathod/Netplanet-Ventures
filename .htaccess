@@ -15,3 +15,431 @@ RewriteRule ^(.+)$ $1.html [L]
 RewriteCond %{REQUEST_URI} !/$
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?]
 RewriteRule ^ %1 [R=301,L]
+
+
+<section class="py-20 bg-gradient-to-b from-slate-50 to-white" id="contact-form">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+            <!-- Left Content - Professional Info -->
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
+                        <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                        <span class="text-sm font-semibold text-primary">GET EXPERT CONSULTATION</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-dark leading-tight">
+                        Connect with Our <span class="text-gradient">Mosquito Net Specialists</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Share your project requirements and receive personalized solutions from our expert team. 
+                        We provide accurate measurements, transparent pricing, and professional installation guidance.
+                    </p>
+                </div>
+
+                <!-- Professional Features -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <i class="fa-solid fa-clock text-primary text-lg"></i>
+                            </div>
+                            <h4 class="font-semibold text-dark">24-Hour Response</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">Get detailed proposals and quotes within one business day</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                                <i class="fa-solid fa-ruler-combined text-accent text-lg"></i>
+                            </div>
+                            <h4 class="font-semibold text-dark">Free Site Measurement</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">Precise measurements for perfect mosquito net installation</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+                                <i class="fa-solid fa-calendar-check text-secondary text-lg"></i>
+                            </div>
+                            <h4 class="font-semibold text-dark">Flexible Scheduling</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">Choose convenient times for consultations and installations</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                                <i class="fa-solid fa-shield-check text-purple-600 text-lg"></i>
+                            </div>
+                            <h4 class="font-semibold text-dark">Quality Guarantee</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">3-year warranty on all mosquito net installations</p>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-dark to-slate-900 text-white">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+                                <i class="fa-solid fa-star text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Rated 4.9/5 by 500+ Clients</h4>
+                            <p class="text-slate-300 text-sm">
+                                Join our satisfied customers who trust us for professional mosquito net solutions. 
+                                <span class="block mt-2 text-white font-medium">"Excellent workmanship and timely delivery!" - Ramesh K., Hubballi</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Form - Professional Design -->
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur opacity-20"></div>
+                <div class="relative bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-dark mb-2">Request Free Consultation</h3>
+                        <p class="text-slate-600">Fill the form below and we'll contact you within 24 hours</p>
+                    </div>
+
+                    <form id="professional-contact-form" class="space-y-6">
+                        <!-- Personal Information -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">Full Name *</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                                    <input type="text" name="name" required
+                                        class="w-full rounded-xl border-2 border-slate-200 bg-white pl-11 pr-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                        placeholder="Enter your full name" />
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">Phone Number *</label>
+                                <div class="relative">
+                                    <i class="fa-solid fa-phone absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                                    <input type="tel" name="phone" required
+                                        class="w-full rounded-xl border-2 border-slate-200 bg-white pl-11 pr-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                        placeholder="+91 98765 43210" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-800">Email Address *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                                <input type="email" name="email" required
+                                    class="w-full rounded-xl border-2 border-slate-200 bg-white pl-11 pr-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                    placeholder="your.email@example.com" />
+                            </div>
+                        </div>
+
+                        <!-- Project Type Selection -->
+                        <div class="space-y-3">
+                            <label class="block text-sm font-semibold text-slate-800">What type of mosquito nets are you interested in? *</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                <label class="project-type-btn cursor-pointer">
+                                    <input type="checkbox" name="project_type" value="sliding" class="hidden" />
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 text-center transition-all hover:border-primary hover:bg-primary/5">
+                                        <i class="fa-solid fa-sliders text-lg text-slate-600 mb-2"></i>
+                                        <span class="block text-sm font-medium text-slate-700">Sliding Nets</span>
+                                    </div>
+                                </label>
+                                <label class="project-type-btn cursor-pointer">
+                                    <input type="checkbox" name="project_type" value="magnetic" class="hidden" />
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 text-center transition-all hover:border-primary hover:bg-primary/5">
+                                        <i class="fa-solid fa-magnet text-lg text-slate-600 mb-2"></i>
+                                        <span class="block text-sm font-medium text-slate-700">Magnetic Nets</span>
+                                    </div>
+                                </label>
+                                <label class="project-type-btn cursor-pointer">
+                                    <input type="checkbox" name="project_type" value="pleated" class="hidden" />
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 text-center transition-all hover:border-primary hover:bg-primary/5">
+                                        <i class="fa-solid fa-layer-group text-lg text-slate-600 mb-2"></i>
+                                        <span class="block text-sm font-medium text-slate-700">Pleated Nets</span>
+                                    </div>
+                                </label>
+                                <label class="project-type-btn cursor-pointer">
+                                    <input type="checkbox" name="project_type" value="balcony" class="hidden" />
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 text-center transition-all hover:border-primary hover:bg-primary/5">
+                                        <i class="fa-solid fa-umbrella-beach text-lg text-slate-600 mb-2"></i>
+                                        <span class="block text-sm font-medium text-slate-700">Balcony Nets</span>
+                                    </div>
+                                </label>
+                                <label class="project-type-btn cursor-pointer">
+                                    <input type="checkbox" name="project_type" value="roller" class="hidden" />
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 text-center transition-all hover:border-primary hover:bg-primary/5">
+                                        <i class="fa-solid fa-arrows-up-down text-lg text-slate-600 mb-2"></i>
+                                        <span class="block text-sm font-medium text-slate-700">Roller Nets</span>
+                                    </div>
+                                </label>
+                                <label class="project-type-btn cursor-pointer">
+                                    <input type="checkbox" name="project_type" value="custom" class="hidden" />
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 text-center transition-all hover:border-primary hover:bg-primary/5">
+                                        <i class="fa-solid fa-pen-ruler text-lg text-slate-600 mb-2"></i>
+                                        <span class="block text-sm font-medium text-slate-700">Custom Solution</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Installation Details -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">Property Type</label>
+                                <select name="property_type"
+                                    class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    <option value="">Select property type</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="independent_house">Independent House</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="commercial">Commercial Space</option>
+                                    <option value="office">Office</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="block text-sm font-semibold text-slate-800">Timeline</label>
+                                <select name="timeline"
+                                    class="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3.5 text-slate-800 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    <option value="">When do you need installation?</option>
+                                    <option value="immediately">Immediately (Within 1 week)</option>
+                                    <option value="2_weeks">Within 2 weeks</option>
+                                    <option value="1_month">Within 1 month</option>
+                                    <option value="flexible">Flexible timeline</option>
+                                    <option value="planning">Just planning/collecting quotes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Project Description -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-semibold text-slate-800">Project Requirements *</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-clipboard-list absolute left-4 top-4 text-slate-400"></i>
+                                <textarea name="message" rows="4" required
+                                    class="w-full rounded-xl border-2 border-slate-200 bg-white pl-11 pr-4 py-3.5 text-slate-800 placeholder-slate-400 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none"
+                                    placeholder="Please describe your requirements: 
+• Number of windows/doors
+• Approximate sizes
+• Special requirements
+• Any other details"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Contact Preferences -->
+                        <div class="space-y-3">
+                            <label class="block text-sm font-semibold text-slate-800">Preferred Contact Method</label>
+                            <div class="flex flex-wrap gap-4">
+                                <label class="contact-method-btn cursor-pointer">
+                                    <input type="radio" name="contact_method" value="phone" class="hidden" checked />
+                                    <div class="px-4 py-3 rounded-xl border-2 border-slate-200 flex items-center gap-3 transition-all hover:border-primary">
+                                        <div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center">
+                                            <div class="w-2.5 h-2.5 rounded-full bg-primary hidden"></div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-phone text-slate-600"></i>
+                                            <span class="text-sm font-medium text-slate-700">Phone Call</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="contact-method-btn cursor-pointer">
+                                    <input type="radio" name="contact_method" value="whatsapp" class="hidden" />
+                                    <div class="px-4 py-3 rounded-xl border-2 border-slate-200 flex items-center gap-3 transition-all hover:border-primary">
+                                        <div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center">
+                                            <div class="w-2.5 h-2.5 rounded-full bg-primary hidden"></div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-brands fa-whatsapp text-green-500"></i>
+                                            <span class="text-sm font-medium text-slate-700">WhatsApp</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="contact-method-btn cursor-pointer">
+                                    <input type="radio" name="contact_method" value="email" class="hidden" />
+                                    <div class="px-4 py-3 rounded-xl border-2 border-slate-200 flex items-center gap-3 transition-all hover:border-primary">
+                                        <div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center">
+                                            <div class="w-2.5 h-2.5 rounded-full bg-primary hidden"></div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <i class="fa-solid fa-envelope text-slate-600"></i>
+                                            <span class="text-sm font-medium text-slate-700">Email</span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Privacy Notice -->
+                        <div class="p-4 bg-slate-50/80 rounded-xl border border-slate-200">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-shield-halved text-primary mt-0.5"></i>
+                                <div>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        Your information is protected by our privacy policy. We never share your details with third parties 
+                                        and only use them to provide you with the best mosquito net solutions.
+                                    </p>
+                                    <div class="flex items-center gap-2 mt-2">
+                                        <input type="checkbox" id="privacy" name="privacy" required class="rounded border-slate-300 text-primary focus:ring-primary" />
+                                        <label for="privacy" class="text-xs text-slate-700">I agree to the privacy policy and terms of service</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all group">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Submit Consultation Request
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+
+                        <!-- Response Message -->
+                        <div id="form-response" class="hidden p-4 rounded-xl border text-center">
+                            <div class="flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-check-circle text-2xl text-green-500"></i>
+                                <div class="text-left">
+                                    <h4 class="font-semibold text-green-700">Thank You!</h4>
+                                    <p class="text-sm text-green-600">We've received your inquiry and will contact you within 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Custom styles for interactive elements */
+    .project-type-btn input:checked + div {
+        border-color: #0EA5E9;
+        background-color: rgba(14, 165, 233, 0.08);
+    }
+    
+    .project-type-btn input:checked + div i {
+        color: #0EA5E9;
+    }
+    
+    .project-type-btn input:checked + div span {
+        color: #0EA5E9;
+        font-weight: 600;
+    }
+    
+    .contact-method-btn input:checked + div {
+        border-color: #0EA5E9;
+        background-color: rgba(14, 165, 233, 0.08);
+    }
+    
+    .contact-method-btn input:checked + div .w-5 {
+        border-color: #0EA5E9;
+    }
+    
+    .contact-method-btn input:checked + div .w-5 .w-2\.5 {
+        display: flex;
+    }
+    
+    .contact-method-btn input:checked + div span {
+        color: #0EA5E9;
+    }
+    
+    /* Focus styles */
+    input:focus, textarea:focus, select:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    }
+    
+    /* Animation for form submission */
+    @keyframes formSuccess {
+        0% { transform: translateY(10px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    #form-response.show {
+        display: block;
+        animation: formSuccess 0.5s ease-out;
+        border-color: #10b981;
+        background-color: rgba(16, 185, 129, 0.05);
+    }
+</style>
+
+<script>
+    // Interactive form functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('professional-contact-form');
+        const projectTypeBtns = document.querySelectorAll('.project-type-btn');
+        const contactMethodBtns = document.querySelectorAll('.contact-method-btn');
+        const formResponse = document.getElementById('form-response');
+        
+        // Project type button selection
+        projectTypeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.querySelector('input');
+                input.checked = !input.checked;
+                this.classList.toggle('active');
+            });
+        });
+        
+        // Contact method button selection
+        contactMethodBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.querySelector('input');
+                contactMethodBtns.forEach(b => {
+                    b.querySelector('input').checked = false;
+                });
+                input.checked = true;
+            });
+        });
+        
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+            
+            if (isValid) {
+                // Show success message
+                formResponse.classList.remove('hidden');
+                formResponse.classList.add('show');
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    form.reset();
+                    formResponse.classList.remove('show');
+                    setTimeout(() => formResponse.classList.add('hidden'), 300);
+                }, 5000);
+            }
+        });
+        
+        // Remove error state on input
+        form.querySelectorAll('input, textarea, select').forEach(field => {
+            field.addEventListener('input', function() {
+                if (this.classList.contains('border-red-500')) {
+                    this.classList.remove('border-red-500');
+                }
+            });
+        });
+    });
+</script>
