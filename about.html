@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Netplanet Ventures</title>
+  <link rel="icon" type="image/png" href="/Assets/Logo.jpeg" sizes="200x200">
+  <link rel="apple-touch-icon" href="/Assets/Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .card-hover {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Roadmap timeline */
+    .timeline {
+      position: relative;
+      padding-left: 1.75rem;
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0.25rem;
+      bottom: 0.25rem;
+      width: 2px;
+      background: linear-gradient(180deg, #0EA5E9, #14B8A6);
+      opacity: 0.25;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+      align-items: start;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .timeline-item.timeline-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-node {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      border: 2px solid rgba(14, 165, 233, 0.18);
+      background: white;
+      box-shadow: 0 12px 30px rgba(14, 165, 233, 0.12);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #0EA5E9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-node::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(6, 182, 212, 0.12));
+      opacity: 0.7;
+    }
+
+    .timeline-card {
+      position: relative;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 16px 40px -20px rgba(15, 23, 42, 0.25);
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 24px;
+      border-width: 10px 10px 10px 0;
+      border-style: solid;
+      border-color: transparent #f8fafc transparent transparent;
+      filter: drop-shadow(-2px 2px 4px rgba(15, 23, 42, 0.05));
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 44px -18px rgba(15, 23, 42, 0.28);
+      border-color: rgba(14, 165, 233, 0.45);
+    }
+
+    .timeline-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0EA5E9;
+      letter-spacing: 0.01em;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-copy {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .timeline {
+        padding-left: 2.5rem;
+      }
+
+      .timeline::before {
+        left: 1.3rem;
+      }
+    }
+
+    .header-nav a {
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #0EA5E9, #14B8A6);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .header-nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .header-nav a.nav-active {
+      color: #0EA5E9;
+      font-weight: 700;
+      background: rgba(14, 165, 233, 0.12);
+      border-radius: 9999px;
+      padding: 0.35rem 0.75rem;
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.18);
+    }
+
+    .header-nav a.nav-active::after {
+      transform: scaleX(1);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .social-tooltip {
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      opacity: 0;
+      transform: translateX(10px);
+      visibility: hidden;
+    }
+
+    .social-item:hover .social-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .social-icon {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-item:hover .social-icon {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#06B6D4',
+            accent: '#14B8A6',
+            dark: '#0F172A',
+            darker: '#020617',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans text-slate-900 bg-white antialiased">
+  <!-- Navbar copied from index -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 font-semibold text-xl text-dark">
+          <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-14 w-15 rounded-full object-cover">
+          <span class="text-gradient">𝓝𝓮𝓽𝓹𝓵𝓪𝓷𝓮𝓽 𝓥𝓮𝓷𝓽𝓾𝓻𝓮𝓼</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium header-nav">
+          <a href="/" class="hover:text-primary transition">Home</a>
+          <a href="/about" class="hover:text-primary transition">About</a>
+          <a href="/products" class="hover:text-primary transition">Products</a>
+          <a href="/showroom" class="hover:text-primary transition">Showroom</a>
+          <a href="/gallery" class="hover:text-primary transition">Gallery</a>
+          <a href="/why-us" class="hover:text-primary transition">Why Choose Us</a>
+          <a href="/contact" class="hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="/contact"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">Book
+            a Visit <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <button id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200 bg-white/80 text-slate-700 shadow-sm hover:bg-slate-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu"
+      class="md:hidden transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0 -translate-y-2 pointer-events-none">
+      <div class="mx-4 mt-3 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
+        <nav class="px-4 py-4 space-y-1 text-sm font-medium">
+          <a href="/"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Home</a>
+          <a href="/about"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">About</a>
+          <a href="/products"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Products</a>
+          <a href="/showroom"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Showroom</a>
+          <a href="/gallery"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Gallery</a>
+          <a href="/why-us"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Why
+            Choose Us</a>
+          <a href="/contact"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Contact</a>
+          <div class="pt-2">
+            <a href="/contact"
+              class="inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-white font-semibold shadow-md shadow-primary/30 hover:shadow-primary/40 transition">
+              Book a Visit <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden md:hidden z-40"></div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-darker via-dark to-slate-900 text-white">
+    <div class="absolute inset-0">
+      <div class="absolute top-16 left-10 h-80 w-80 rounded-full bg-primary/30 blur-3xl animate-glow"></div>
+      <div class="absolute bottom-24 right-8 h-96 w-96 rounded-full bg-secondary/25 blur-3xl animate-glow"
+        style="animation-delay: 0.8s;"></div>
+      <div
+        class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30">
+      </div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-7 animate-float">
+          <div
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass border border-white/10 text-white shadow-xl">
+            <div class="h-2 w-2 rounded-full bg-accent animate-pulse"></div>
+            <span class="text-xs font-semibold uppercase tracking-[0.2em]">Inside Netplanet Ventures</span>
+          </div>
+          <h1 class="font-display text-5xl lg:text-6xl text-white leading-[1.1]">𝙰𝚋𝚘𝚞𝚝 𝙽𝚎𝚝𝚙𝚕𝚊𝚗𝚎𝚝
+            𝚅𝚎𝚗𝚝𝚞𝚛𝚎𝚜</h1>
+          <p class="text-lg text-slate-200 leading-relaxed max-w-2xl">We add mesh to your home with care, so fresh air
+            flows freely while insects stay out. Designed around your architecture, climate, and daily living, our
+            mosquito nets let you enjoy open spaces without compromise. From the first fabric touch to the final latch
+            click, every detail is shaped with patience, precision, and love.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact"
+              class="group relative px-8 py-4 rounded-xl text-base font-semibold text-white overflow-hidden shadow-2xl transition-all hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+              <span class="relative flex items-center gap-3">Schedule a visit <i
+                  class="fa-solid fa-arrow-right-long group-hover:translate-x-1 transition-transform"></i></span>
+            </a>
+            <a href="/showroom"
+              class="px-8 py-4 rounded-xl text-base font-semibold text-white glass border border-white/20 hover:bg-white/10 transition-all flex items-center gap-3">Explore
+              our showroom <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <div class="grid grid-cols-3 gap-4 pt-6">
+            <div class="glass border border-white/10 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-bold text-white">5K+</div>
+              <div class="text-[11px] text-slate-300 uppercase tracking-wider">Installations</div>
+            </div>
+            <div class="glass border border-white/10 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-bold text-white">8+</div>
+              <div class="text-[11px] text-slate-300 uppercase tracking-wider">Years Legacy</div>
+            </div>
+            <div class="glass border border-white/10 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-bold text-white">4.9 ★</div>
+              <div class="text-[11px] text-slate-300 uppercase tracking-wider">Client Rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="absolute -inset-6 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-25">
+          </div>
+          <div class="relative aspect-[4/4] rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+            <img
+              src="https://5.imimg.com/data5/SELLER/Default/2023/8/333181832/FE/MJ/NR/184595026/pleated-mosquito-net-for-sliding-doors.png"
+              alt="Sliding door with integrated mosquito mesh screen" class="w-full h-full object-contain" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 glass rounded-2xl p-5 border border-white/10">
+              <div class="flex items-center gap-4">
+                <div
+                  class="h-12 w-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+                  <i class="fa-solid fa-award text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">ISO-grade quality routines</p>
+                  <p class="text-slate-300 text-sm">Documented surveys, calibrated fabrication, and tidy handovers every
+                    time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="space-y-5">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-semibold uppercase tracking-[0.2em]">
+          Our Story</div>
+        <h2 class="font-display text-4xl text-dark leading-tight">A showroom-first company that grew by keeping
+          promises.</h2>
+        <p class="text-lg text-slate-700 leading-relaxed">Netplanet Ventures began as a boutique installer focused on
+          mosquito screens that actually fit Indian homes. Today, we partner with architects, hoteliers, and homeowners
+          across Karnataka—still obsessing over measurements, hardware, and finishes so every frame sits clean and works
+          smoothly.</p>
+        <div class="timeline" aria-label="Company growth roadmap">
+          <div class="timeline-item">
+            <div class="timeline-node">2018</div>
+            <div class="timeline-card">
+              <span class="timeline-meta"><i class="fa-solid fa-flag"></i><span>Foundation</span></span>
+              <div class="timeline-title">Built our fabrication pod</div>
+              <p class="timeline-copy">Set up the first fabrication pod and on-site survey crew to deliver clean fits
+                on every opening.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">2018</div>
+            <div class="timeline-card">
+              <span class="timeline-meta"><i class="fa-solid fa-store"></i><span>Showroom</span></span>
+              <div class="timeline-title">Launched experience center</div>
+              <p class="timeline-copy">Opened an experience showroom so clients could see, feel, and compare systems
+                before we custom-build.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">2018</div>
+            <div class="timeline-card">
+              <span class="timeline-meta"><i class="fa-solid fa-layer-group"></i><span>Scale</span></span>
+              <div class="timeline-title">Expanded the product stack</div>
+              <p class="timeline-copy">Added pleated sliders, roller blinds, and custom hardware to handle wider spans
+                and premium interiors.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-node">Now</div>
+            <div class="timeline-card">
+              <span class="timeline-meta"><i class="fa-solid fa-forward"></i><span>Forward</span></span>
+              <div class="timeline-title">Engineering the next leap</div>
+              <p class="timeline-copy">Pursuing faster lead times, greener materials, and data-backed quality checks
+                to raise the bar again.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div
+          class="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/15 via-secondary/15 to-accent/15 blur-xl">
+        </div>
+        <div class="relative bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-xl space-y-6">
+          <div class="flex items-start gap-4">
+            <div
+              class="h-12 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+              <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-dark">Precision fabrication</h3>
+              <p class="text-slate-600 text-sm">Engineered measurements, CNC-cut profiles, and marine-grade finishes
+                built to last in humid, coastal, and dusty conditions.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="h-12 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-dark">People-first service</h3>
+              <p class="text-slate-600 text-sm">Transparent communication, tidy installs, respectful teams, and
+                after-sales visits that keep your systems gliding.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="h-12 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg text-dark">Sustainable mindset</h3>
+              <p class="text-slate-600 text-sm">Long-life components, recyclable meshes, and thoughtful waste handling
+                to minimize our footprint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-4 mb-10">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-primary border border-primary/20 text-xs font-semibold uppercase tracking-[0.2em]">
+          Process</div>
+        <h2 class="font-display text-4xl text-dark leading-tight">A proven, showroom-led delivery playbook.</h2>
+        <p class="text-lg text-slate-700 max-w-3xl">Every build follows a documented sequence so you know where we are,
+          what is next, and when your space will be ready.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span
+              class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">01</span>
+            <h3 class="font-semibold text-lg">Showroom consult</h3>
+          </div>
+          <p class="text-sm text-slate-600">Compare meshes, profiles, and fabrics in-person with our specialists.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span
+              class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">02</span>
+            <h3 class="font-semibold text-lg">On-site survey</h3>
+          </div>
+          <p class="text-sm text-slate-600">Laser measurements, obstruction checks, and hardware mapping.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span
+              class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">03</span>
+            <h3 class="font-semibold text-lg">Fabrication</h3>
+          </div>
+          <p class="text-sm text-slate-600">CNC-cut frames, tension-balanced mesh, and pre-hung checks before dispatch.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span
+              class="h-10 w-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">04</span>
+            <h3 class="font-semibold text-lg">Installation & care</h3>
+          </div>
+          <p class="text-sm text-slate-600">Clean installs, handover walkthroughs, warranty registration, and scheduled
+            service reminders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="space-y-4 lg:col-span-1">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-semibold uppercase tracking-[0.2em]">
+          Why clients stay</div>
+        <h2 class="font-display text-4xl text-dark leading-tight">Architecture-friendly, climate-ready, people-first.
+        </h2>
+        <p class="text-slate-700">Our systems are engineered for heavy use and harsh weather, but we never lose sight of
+          the human experience—quiet glides, tidy installs, and proactive care.</p>
+      </div>
+      <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Specification support</h3>
+          <p class="text-slate-600 text-sm">Drawings, samples, and BOQs for architects and PMCs. We collaborate early to
+            avoid site surprises.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Premium materials</h3>
+          <p class="text-slate-600 text-sm">Marine-grade aluminum, UV-stable meshes, and German-engineered hardware for
+            long life.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Service you can reach</h3>
+          <p class="text-slate-600 text-sm">Dedicated coordinators, documented timelines, and responsive after-sales
+            visits.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-hover">
+          <h3 class="font-semibold text-lg text-dark mb-2">Safety & hygiene</h3>
+          <p class="text-slate-600 text-sm">Protected work areas, minimal dust, and courteous crews trained for premium
+            interiors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-r from-primary via-secondary to-accent text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div class="space-y-3">
+        <p class="uppercase tracking-[0.2em] text-xs font-semibold text-white/80">Let us plan your protection</p>
+        <h2 class="font-display text-3xl lg:text-4xl leading-tight">See every option in our showroom, then let us build
+          the perfect fit.</h2>
+        <p class="text-slate-100 text-sm max-w-2xl">Bring your drawings, photos, or window sizes—we will map the right
+          system, timeline, and budget in one visit.</p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/contact"
+          class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-dark font-semibold shadow-lg hover:-translate-y-0.5 transition-transform">Book
+          a visit <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="/products"
+          class="inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-white/50 text-white font-semibold hover:bg-white/10 transition">Browse
+          products <i class="fa-solid fa-grid"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="relative bg-gradient-to-br from-darker via-dark to-slate-900 text-white overflow-hidden">
+    <svg class="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="footer-mesh" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M0 24V0H24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" />
+          <path d="M0 0L24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+          <path d="M24 0L0 24" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+        </pattern>
+        <radialGradient id="footer-glow" cx="50%" cy="0%" r="60%">
+          <stop offset="0%" stop-color="rgba(20,184,166,0.25)" />
+          <stop offset="100%" stop-color="rgba(2,6,23,0)" />
+        </radialGradient>
+        <linearGradient id="footer-sheen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
+          <stop offset="50%" stop-color="rgba(255,255,255,0.02)" />
+          <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#footer-glow)" />
+      <rect width="100%" height="100%" fill="url(#footer-sheen)" />
+      <rect width="100%" height="100%" fill="url(#footer-mesh)" />
+    </svg>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="/" class="flex items-center gap-3 group">
+            <div class="relative h-12 w-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-full w-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg">Netplanet Ventures</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Excellence in mosquito screens, nets, and blinds. Carefully crafted solutions for elegant homes and
+            professional spaces.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#1877F2] transition-colors">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/mosquito_mesh_hubli?utm_source=qr&igsh=MWprcmhtODM4bDZ2YQ=="
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#E1306C] transition-colors">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#FF0000] transition-colors">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://wa.me/919845356225?text=Hi"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#25D366] transition-colors">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/about" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="/products"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+            <li><a href="/showroom"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Showroom</a></li>
+            <li><a href="/gallery"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Gallery</a></li>
+            <li><a href="/why-us" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Why Choose Us</a></li>
+            <li><a href="/contact"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Our Products</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <a href="/blog/glide-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glide Fit</li>
+            </a>
+            <a href="/blog/crease-fit-pleated">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Pleated</li>
+            </a>
+            <a href="/blog/crease-fit-ditto">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Ditto</li>
+            </a>
+            <a href="/blog/magnetic-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Magnetic Fit</li>
+            </a>
+            <a href="/blog/ace-door">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Door</li>
+            </a>
+            <a href="/blog/glossy-roll-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glossy Roll Fit</li>
+            </a>
+            <a href="/blog/ace-window">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Window</li>
+            </a>
+
+            <a href="/blog/classic-window-openable-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Classic Window Openable
+                Fit</li>
+            </a>
+            <a href="/blog/box-frame-classic-window">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Box Frame with Classic
+                Window - Fixed Fit</li>
+            </a>
+            <a href="/blog/pigeon-net">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Pigeon Net</li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="font-bold text-lg">Get In Touch</h4>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3 text-slate-300">
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+              <span>G-A. 5 Preeti Ashiyana Complex, Shirur Park, Circle, Vidya Nagar, Hubballi, Karnataka 580021</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <span>+91 98453 56225</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <span>vishwa559@gmail.com</span>
+            </div>
+          </div>
+          <a href="/contact"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            Book a Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>&copy; 2026 Netplanet Ventures. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <aside
+    class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 sm:gap-4 p-2 sm:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-l-2xl border-l border-y border-slate-200">
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Facebook
+      </span>
+      <a href="#" aria-label="Facebook"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#1877F2] text-white shadow-md hover:shadow-[#1877F2]/50">
+        <i class="fa-brands fa-facebook-f text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Instagram
+      </span>
+        <a href="https://www.instagram.com/mosquito_mesh_hubli?utm_source=qr&igsh=MWprcmhtODM4bDZ2YQ==" aria-label="Instagram"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white shadow-md">
+        <i class="fa-brands fa-instagram text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        WhatsApp
+      </span>
+        <a href="https://wa.me/919845356225?text=Hi" aria-label="WhatsApp"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-md hover:shadow-[#25D366]/50">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        YouTube
+      </span>
+      <a href="#" aria-label="YouTube"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#FF0000] text-white shadow-md hover:shadow-[#FF0000]/50">
+        <i class="fa-brands fa-youtube text-sm"></i>
+      </a>
+    </div>
+
+    <div class="w-8 h-[1px] bg-slate-300 my-1 mx-auto"></div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Email
+      </span>
+      <a href="mailto:vishwa559@gmail.com" aria-label="Email"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-slate-800 text-white shadow-md hover:shadow-slate-800/50">
+        <i class="fa-regular fa-envelope text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center mt-2">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Top
+      </span>
+      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to Top"
+        class="social-icon w-8 h-8 rounded-full flex items-center justify-center bg-slate-200 text-slate-600 hover:bg-slate-300 hover:text-slate-900">
+        <i class="fa-solid fa-arrow-up text-xs"></i>
+      </a>
+    </div>
+  </aside>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    const openMobileMenu = () => {
+      mobileMenu.classList.remove('pointer-events-none', 'opacity-0', '-translate-y-2', 'max-h-0');
+      mobileMenu.classList.add('opacity-100', 'translate-y-0', 'max-h-[80vh]');
+      mobileBackdrop.classList.remove('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenu.classList.add('pointer-events-none', 'opacity-0', '-translate-y-2', 'max-h-0');
+      mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'max-h-[80vh]');
+      mobileBackdrop.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    if (menuBtn && mobileMenu && mobileBackdrop) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -30px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          if (entry.target.classList.contains('timeline-item')) {
+            entry.target.classList.add('timeline-visible');
+          }
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(18px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+
+    document.querySelectorAll('.timeline-item').forEach((item, idx) => {
+      item.style.transitionDelay = `${idx * 80}ms`;
+      observer.observe(item);
+    });
+
+    (() => {
+      const heroImages = [
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop',
+        'https://i.pinimg.com/236x/68/62/3c/68623c0c22f450283585722c2eec1888.jpg',
+        'https://sennrichag.ch/uploads/9/7/5/1/97516138/kopie-von-dscn0989_1_orig.jpg',
+        'https://ziegler-metallgewebe.com/static/images/5c4986a75cefc620575e0c6e_2a4aff09ffc69c2723c23b46923ec23d.jpeg',
+        'https://i.pinimg.com/originals/36/78/39/367839d57536ac8017d9efeac357e553.jpg'
+      ];
+
+      const layers = [
+        document.getElementById('hero-bg-1'),
+        document.getElementById('hero-bg-2')
+      ];
+
+      if (!heroImages.length || layers.some(layer => !layer)) return;
+
+      let activeLayer = 0;
+      let imageIndex = 0;
+
+      const setImage = (layer, url) => {
+        layer.style.backgroundImage = `url('${url}')`;
+      };
+
+      setImage(layers[activeLayer], heroImages[imageIndex]);
+      layers[activeLayer].classList.add('visible');
+
+      const swap = () => {
+        imageIndex = (imageIndex + 1) % heroImages.length;
+        const nextLayer = (activeLayer + 1) % layers.length;
+        setImage(layers[nextLayer], heroImages[imageIndex]);
+        layers[nextLayer].classList.add('visible');
+        layers[activeLayer].classList.remove('visible');
+        activeLayer = nextLayer;
+      };
+
+      const preloadNext = (imageIndex + 1) % heroImages.length;
+      const preloadLayer = (activeLayer + 1) % layers.length;
+      setImage(layers[preloadLayer], heroImages[preloadNext]);
+
+      setInterval(swap, 4500);
+    })();
+
+    (() => {
+      const currentPath = window.location.pathname === '/' ? '/index' : window.location.pathname;
+      document.querySelectorAll('.header-nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const normalizedHref = href.startsWith('/') ? href : `/${href}`;
+        if (currentPath === normalizedHref || currentPath.endsWith(href)) {
+          link.classList.add('nav-active');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

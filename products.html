@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Netplanet Ventures</title>
+  <link rel="icon" type="image/png" href="/Assets/Logo.jpeg" sizes="200x200">
+  <link rel="apple-touch-icon" href="/Assets/Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-nav a {
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #0EA5E9, #14B8A6);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .header-nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .header-nav a.nav-active {
+      color: #0EA5E9;
+      font-weight: 700;
+      background: rgba(14, 165, 233, 0.12);
+      border-radius: 9999px;
+      padding: 0.35rem 0.75rem;
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.18);
+    }
+
+    .header-nav a.nav-active::after {
+      transform: scaleX(1);
+    }
+
+    .social-tooltip {
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      opacity: 0;
+      transform: translateX(10px);
+      visibility: hidden;
+    }
+
+    .social-item:hover .social-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .social-icon {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-item:hover .social-icon {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#06B6D4',
+            accent: '#14B8A6',
+            dark: '#0F172A',
+            darker: '#020617',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-sans text-slate-900 bg-white antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 font-semibold text-xl text-dark">
+          <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-14 w-15 rounded-full object-cover">
+          <span class="text-gradient">𝓝𝓮𝓽𝓹𝓵𝓪𝓷𝓮𝓽 𝓥𝓮𝓷𝓽𝓾𝓻𝓮𝓼</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium header-nav">
+          <a href="/" class="hover:text-primary transition">Home</a>
+          <a href="/about" class="hover:text-primary transition">About</a>
+          <a href="/products" class="hover:text-primary transition">Products</a>
+          <a href="/showroom" class="hover:text-primary transition">Showroom</a>
+          <a href="/gallery" class="hover:text-primary transition">Gallery</a>
+          <a href="/why-us" class="hover:text-primary transition">Why Choose Us</a>
+          <a href="/contact" class="hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="/contact"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">Book
+            a Visit <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <button id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200 bg-white/80 text-slate-700 shadow-sm hover:bg-slate-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu"
+      class="md:hidden transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0 -translate-y-2 pointer-events-none">
+      <div class="mx-4 mt-3 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
+        <nav class="px-4 py-4 space-y-1 text-sm font-medium">
+          <a href="/"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Home</a>
+          <a href="/about"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">About</a>
+          <a href="/products"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Products</a>
+          <a href="/showroom"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Showroom</a>
+          <a href="/gallery"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Gallery</a>
+          <a href="/why-us"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Why
+            Choose Us</a>
+          <a href="/contact"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Contact</a>
+          <div class="pt-2">
+            <a href="/contact"
+              class="inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-white font-semibold shadow-md shadow-primary/30 hover:shadow-primary/40 transition">
+              Book a Visit <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden md:hidden z-40"></div>
+
+  <!-- Page Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-darker via-dark to-slate-900 text-white py-16">
+    <div class="absolute inset-0">
+      <div class="absolute top-10 left-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 h-72 w-72 rounded-full bg-accent/25 blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
+      <p class="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Products</p>
+      <h1 class="text-4xl lg:text-5xl font-display font-bold leading-tight">Screens, Nets, and Blinds<br><span
+          class="text-gradient">Engineered for Every Opening</span></h1>
+      <p class="text-lg text-slate-200 max-w-3xl">Purpose-built systems that keep spaces bright, protected, and easy to
+        maintain. Every solution is custom-fabricated after precise site measurements.</p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href="#catalog"
+          class="px-6 py-3 rounded-xl bg-white text-dark font-semibold hover:-translate-y-0.5 transition shadow-lg">Explore
+          Products</a>
+        <a href="/contact"
+          class="px-6 py-3 rounded-xl border border-white/40 text-white font-semibold hover:bg-white/10 transition">Request
+          Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog -->
+  <section id="catalog" class="py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div class="text-center space-y-3">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-semibold uppercase tracking-wider">
+          Product Catalog</div>
+        <h3 class="font-display font-bold text-3xl text-dark">Complete Fit & Mesh Solutions</h3>
+        <p class="text-slate-600 max-w-3xl mx-auto">Every system is custom fabricated after site measurements. Choose
+          the fit that matches your opening type, aesthetics, and usage intensity.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Glide-Fit.png" alt="Glide Fit sliding mosquito screens"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Glide Fit</h4>
+            <p class="text-slate-600 text-sm">Smooth sliding mosquito screens for large openings and balcony sliders.
+            </p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Low-friction rollers</li>
+              <li>Slim, powder-coated frames</li>
+              <li>High-visibility mesh</li>
+            </ul>
+            <a href="/blog/glide-fit"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Crease-Fit-Plated.png" alt="Crease Fit Pleated mesh system"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Crease Fit Pleated</h4>
+            <p class="text-slate-600 text-sm">Pleated mesh system ideal for wide spans needing compact stacking.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Minimal track footprint</li>
+              <li>Soft-close guide rails</li>
+              <li>Child-safe edges</li>
+            </ul>
+            <a href="/blog/crease-fit-pleated"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white">
+            <img src="Assets/Product-Photo/Crease-Fit-Ditto.png" alt="Crease Fit Ditto twin-panel mesh"
+              class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Crease Fit Ditto</h4>
+            <p class="text-slate-600 text-sm">Twin-panel pleated mesh for symmetrical openings and balanced looks.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Dual synchronized panels</li>
+              <li>Near-invisible mesh</li>
+              <li>Custom color options</li>
+            </ul>
+            <a href="/blog/crease-fit-ditto"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white">
+            <img src="Assets/Product-Photo/Magnetic-Fit.png" alt="Magnetic Fit detachable screens"
+              class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Magnetic Fit</h4>
+            <p class="text-slate-600 text-sm">Detachable magnetic screens for quick access and easy cleaning.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Tool-free removal</li>
+              <li>Flush-fit trims</li>
+              <li>Great for kitchens</li>
+            </ul>
+            <a href="/blog/magnetic-fit"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Ace-Door.png" alt="Ace Door hinged screen"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Ace Door</h4>
+            <p class="text-slate-600 text-sm">Robust hinged door screens for high-traffic entrances.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Heavy-duty hinges</li>
+              <li>Auto-closing options</li>
+              <li>Weather and pest seal</li>
+            </ul>
+            <a href="/blog/ace-door"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Glossy-Roll-Fit.png" alt="Glossy Roll Fit roller screen"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Glossy Roll Fit</h4>
+            <p class="text-slate-600 text-sm">Roller-type screens with sleek fascia for premium interiors.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Smooth retract mechanism</li>
+              <li>Gloss finish cassette</li>
+              <li>Side or top roll variants</li>
+            </ul>
+            <a href="/blog/glossy-roll-fit"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Ace-Window.jpeg" alt="Ace Window hinged screen"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Ace Window</h4>
+            <p class="text-slate-600 text-sm">Hinged window screens designed for daily ventilation.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Sturdy corner joints</li>
+              <li>Multi-lock options</li>
+              <li>Quick swing-open for cleaning</li>
+            </ul>
+            <a href="/blog/ace-window"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Classic-Window-Openable-Fit.jpeg" alt="Classic Window Openable Fit"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Classic Window Openable Fit</h4>
+            <p class="text-slate-600 text-sm">Traditional openable frames with secure latches and neat trims.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Flush-mounted profiles</li>
+              <li>Custom color powder coat</li>
+              <li>Ideal for regular cleaning access</li>
+            </ul>
+            <a href="/blog/classic-window-openable-fit"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white">
+            <img src="Assets/Product-Photo/Box-Frame-with-Classic-Window-Fixed-Fit.png"
+              alt="Box Frame with Classic Window - Fixed Fit" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Box Frame with Classic Window - Fixed Fit</h4>
+            <p class="text-slate-600 text-sm">Fixed-fit box frame for clean sightlines and firm sealing.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Rigid perimeter frame</li>
+              <li>High-tension mesh</li>
+              <li>Great for non-operable panes</li>
+            </ul>
+            <a href="/blog/box-frame-fixed-fit"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Pigeon-Net.jpg" alt="Peigen Net fine mesh"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Peigen Net</h4>
+            <p class="text-slate-600 text-sm">Premium fine mesh option delivering clarity and airflow.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Ultra-fine weave</li>
+              <li>Corrosion-resistant fibers</li>
+              <li>Ideal for scenic openings</li>
+            </ul>
+            <a href="/blog/peigen-net"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Aluminum-Sliding-Window.png" alt="Aluminum sliding window system"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Aluminum Sliding Window</h4>
+            <p class="text-slate-600 text-sm">Smooth-glide aluminium windows with slim frames and weather sealing.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Two-track or three-track options</li>
+              <li>Quiet rollers with precision tracks</li>
+              <li>Custom sizes for every opening</li>
+            </ul>
+            <a href="/blog/aluminum-sliding-window"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Ceiling-Cloth-Dryer.png" alt="Ceiling cloth dryer with pulley system"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Ceiling Cloth Dryer</h4>
+            <p class="text-slate-600 text-sm">Space-saving ceiling dryer with smooth pulley lift and secure locking.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Stainless rods and strong brackets</li>
+              <li>Easy lift-and-lock operation</li>
+              <li>Ideal for balconies and bathrooms</li>
+            </ul>
+            <a href="/blog/ceiling-cloth-dryer"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Tuff-Door.png" alt="Tuff Door heavy-duty door system"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Tuff Door</h4>
+            <p class="text-slate-600 text-sm">Heavy-duty door solution built for security and high-traffic use.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>Reinforced frames</li>
+              <li>Premium hinges and locks</li>
+              <li>Durable weather resistance</li>
+            </ul>
+            <a href="/blog/tuff-door"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+          <div
+            class="aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center">
+            <img src="Assets/Product-Photo/Invisible-Grille.png" alt="Invisible grille safety system"
+              class="w-full h-full object-contain scale-[1.05]">
+          </div>
+          <div class="space-y-3">
+            <h4 class="font-bold text-lg text-dark">Invisible Grille</h4>
+            <p class="text-slate-600 text-sm">Minimal safety grille that preserves views and airflow.</p>
+            <ul class="text-sm text-slate-600 list-disc list-inside space-y-1">
+              <li>High-tensile stainless wire</li>
+              <li>Child and pet safety</li>
+              <li>Clean, unobstructed aesthetics</li>
+            </ul>
+            <a href="/blog/invisible-grille"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-dark font-semibold text-sm shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary hover:text-primary transition">Read
+              more <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-gradient-to-r from-primary via-secondary to-accent text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.2em] font-semibold">Schedule</p>
+        <h3 class="font-display font-bold text-3xl">Need sizing or samples?</h3>
+        <p class="text-white/90">Our specialists bring material swatches and profile samples to your site. Get precise
+          measurements, timelines, and a transparent quote.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/contact"
+            class="px-6 py-3 rounded-xl bg-white text-primary font-semibold shadow-lg hover:-translate-y-0.5 transition">Book
+            a visit</a>
+          <a href="/showroom"
+            class="px-6 py-3 rounded-xl border border-white/60 text-white font-semibold hover:bg-white/10 transition">Visit
+            showroom</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 rounded-3xl bg-white/10 blur-3xl"></div>
+        <div class="relative p-8 rounded-3xl bg-white/10 border border-white/20 shadow-2xl backdrop-blur">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="h-12 w-12 rounded-2xl bg-white/20 flex items-center justify-center text-white text-2xl">
+              <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-wider text-white/80">Lead Time</p>
+              <p class="text-xl font-bold">24 hours</p>
+            </div>
+          </div>
+          <p class="text-white/90 text-sm leading-relaxed">Site survey scheduling within 24 hours in most serviceable
+            pin codes. Detailed BOQ and finish options shared after measurement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative bg-gradient-to-br from-darker via-dark to-slate-900 text-white overflow-hidden">
+    <svg class="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="footer-mesh" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M0 24V0H24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" />
+          <path d="M0 0L24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+          <path d="M24 0L0 24" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+        </pattern>
+        <radialGradient id="footer-glow" cx="50%" cy="0%" r="60%">
+          <stop offset="0%" stop-color="rgba(20,184,166,0.25)" />
+          <stop offset="100%" stop-color="rgba(2,6,23,0)" />
+        </radialGradient>
+        <linearGradient id="footer-sheen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
+          <stop offset="50%" stop-color="rgba(255,255,255,0.02)" />
+          <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#footer-glow)" />
+      <rect width="100%" height="100%" fill="url(#footer-sheen)" />
+      <rect width="100%" height="100%" fill="url(#footer-mesh)" />
+    </svg>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="/" class="flex items-center gap-3 group">
+            <div class="relative h-12 w-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-full w-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg">Netplanet Ventures</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Excellence in mosquito screens, nets, and blinds. Carefully crafted solutions for elegant homes and
+            professional spaces.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#1877F2] transition-colors">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/mosquito_mesh_hubli?utm_source=qr&igsh=MWprcmhtODM4bDZ2YQ=="
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#E1306C] transition-colors">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#FF0000] transition-colors">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://wa.me/919845356225?text=Hi"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#25D366] transition-colors">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/about"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="/products"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+            <li><a href="/showroom"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Showroom</a></li>
+            <li><a href="/gallery"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Gallery</a></li>
+            <li><a href="/why-us"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Why Choose Us</a></li>
+            <li><a href="/contact"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Our Products</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <a href="/blog/glide-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glide Fit</li>
+            </a>
+            <a href="/blog/crease-fit-pleated">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Pleated</li>
+            </a>
+            <a href="/blog/crease-fit-ditto">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Ditto</li>
+            </a>
+            <a href="/blog/magnetic-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Magnetic Fit</li>
+            </a>
+            <a href="/blog/ace-door">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Door</li>
+            </a>
+            <a href="/blog/glossy-roll-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glossy Roll Fit</li>
+            </a>
+            <a href="/blog/ace-window">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Window</li>
+            </a>
+            <a href="/blog/classic-window-openable-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Classic Window Openable
+                Fit</li>
+            </a>
+            <a href="/blog/box-frame-classic-window">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Box Frame with Classic
+                Window - Fixed Fit</li>
+            </a>
+            <a href="/blog/pigeon-net">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Pigeon Net</li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="font-bold text-lg">Get In Touch</h4>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3 text-slate-300">
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+              <span>G-A. 5 Preeti Ashiyana Complex, Shirur Park, Circle, Vidya Nagar, Hubballi, Karnataka 580021</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <span>+91 98453 56225</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <span>vishwa559@gmail.com</span>
+            </div>
+          </div>
+          <a href="/contact"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            Book a Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>&copy; 2026 Netplanet Ventures. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <aside
+    class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 sm:gap-4 p-2 sm:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-l-2xl border-l border-y border-slate-200">
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Facebook
+      </span>
+      <a href="#" aria-label="Facebook"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#1877F2] text-white shadow-md hover:shadow-[#1877F2]/50">
+        <i class="fa-brands fa-facebook-f text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Instagram
+      </span>
+        <a href="https://www.instagram.com/mosquito_mesh_hubli?utm_source=qr&igsh=MWprcmhtODM4bDZ2YQ==" aria-label="Instagram"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white shadow-md">
+        <i class="fa-brands fa-instagram text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        WhatsApp
+      </span>
+        <a href="https://wa.me/919845356225?text=Hi" aria-label="WhatsApp"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-md hover:shadow-[#25D366]/50">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        YouTube
+      </span>
+      <a href="#" aria-label="YouTube"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#FF0000] text-white shadow-md hover:shadow-[#FF0000]/50">
+        <i class="fa-brands fa-youtube text-sm"></i>
+      </a>
+    </div>
+
+    <div class="w-8 h-[1px] bg-slate-300 my-1 mx-auto"></div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Email
+      </span>
+      <a href="mailto:vishwa559@gmail.com" aria-label="Email"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-slate-800 text-white shadow-md hover:shadow-slate-800/50">
+        <i class="fa-regular fa-envelope text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center mt-2">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Top
+      </span>
+      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to Top"
+        class="social-icon w-8 h-8 rounded-full flex items-center justify-center bg-slate-200 text-slate-600 hover:bg-slate-300 hover:text-slate-900">
+        <i class="fa-solid fa-arrow-up text-xs"></i>
+      </a>
+    </div>
+  </aside>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    const openMobileMenu = () => {
+      mobileMenu.classList.remove('pointer-events-none', 'opacity-0', '-translate-y-2', 'max-h-0');
+      mobileMenu.classList.add('opacity-100', 'translate-y-0', 'max-h-[80vh]');
+      mobileBackdrop.classList.remove('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenu.classList.add('pointer-events-none', 'opacity-0', '-translate-y-2', 'max-h-0');
+      mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'max-h-[80vh]');
+      mobileBackdrop.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    if (menuBtn && mobileMenu && mobileBackdrop) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Add fade-in effect to cards
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    (() => {
+      const currentPath = window.location.pathname === '/' ? '/index' : window.location.pathname;
+      document.querySelectorAll('.header-nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const normalizedHref = href.startsWith('/') ? href : `/${href}`;
+        if (currentPath === normalizedHref || currentPath.endsWith(href)) {
+          link.classList.add('nav-active');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Netplanet Ventures</title>
+  <meta name="description"
+    content="Terms of Service for Netplanet Ventures detailing use of site, quotations, orders, payments, warranties, and service conditions for mosquito screens, nets, and blinds.">
+  <link rel="icon" type="image/png" href="/Assets/Logo.jpeg" sizes="200x200">
+  <link rel="apple-touch-icon" href="/Assets/Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .text-gradient {
+      background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-nav a {
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #0EA5E9, #14B8A6);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .header-nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .header-nav a.nav-active {
+      color: #0EA5E9;
+      font-weight: 700;
+      background: rgba(14, 165, 233, 0.12);
+      border-radius: 9999px;
+      padding: 0.35rem 0.75rem;
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.18);
+    }
+
+    .header-nav a.nav-active::after {
+      transform: scaleX(1);
+    }
+
+    .social-tooltip {
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      opacity: 0;
+      transform: translateX(10px);
+      visibility: hidden;
+    }
+
+    .social-item:hover .social-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .social-icon {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-item:hover .social-icon {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#0EA5E9', secondary: '#06B6D4', accent: '#14B8A6', dark: '#0F172A', darker: '#020617' }, fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], display: ['Playfair Display', 'serif'] } } } };</script>
+</head>
+
+<body class="font-sans text-slate-900 bg-white antialiased">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 font-semibold text-xl text-dark">
+          <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-14 w-15 rounded-full object-cover">
+          <span class="text-gradient">𝓝𝓮𝓽𝓹𝓵𝓪𝓷𝓮𝓽 𝓥𝓮𝓷𝓽𝓾𝓻𝓮𝓼</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium header-nav">
+          <a href="/" class="hover:text-primary transition">Home</a>
+          <a href="/about" class="hover:text-primary transition">About</a>
+          <a href="/products" class="hover:text-primary transition">Products</a>
+          <a href="/showroom" class="hover:text-primary transition">Showroom</a>
+          <a href="/gallery" class="hover:text-primary transition">Gallery</a>
+          <a href="/why-us" class="hover:text-primary transition">Why Choose Us</a>
+          <a href="/contact" class="hover:text-primary transition">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="/contact"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/30 hover:-translate-y-0.5 transition transform">Book
+            a Visit <i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
+        <button id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-slate-200 bg-white/80 text-slate-700 shadow-sm hover:bg-slate-50 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu"
+      class="md:hidden transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0 -translate-y-2 pointer-events-none">
+      <div class="mx-4 mt-3 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-xl shadow-xl">
+        <nav class="px-4 py-4 space-y-1 text-sm font-medium">
+          <a href="/"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Home</a>
+          <a href="/about"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">About</a>
+          <a href="/products"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Products</a>
+          <a href="/showroom"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Showroom</a>
+          <a href="/gallery"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Gallery</a>
+          <a href="/why-us"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Why
+            Choose Us</a>
+          <a href="/contact"
+            class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer">Contact</a>
+          <div class="pt-2">
+            <a href="/contact"
+              class="inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-white font-semibold shadow-md shadow-primary/30 hover:shadow-primary/40 transition">
+              Book a Visit <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden md:hidden z-40"></div>
+
+  <main>
+    <section class="relative overflow-hidden bg-gradient-to-br from-darker via-dark to-slate-900 text-white py-16">
+      <div class="absolute inset-0">
+        <div class="absolute top-10 left-10 h-72 w-72 rounded-full bg-primary/25 blur-3xl"></div>
+        <div class="absolute bottom-10 right-20 h-72 w-72 rounded-full bg-accent/25 blur-3xl"></div>
+        <div
+          class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(20,184,166,0.18),transparent_30%),radial-gradient(circle_at_80%_80%,rgba(14,165,233,0.15),transparent_32%)]">
+        </div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-4">
+          <p class="text-xs uppercase tracking-[0.25em] text-accent font-semibold">Terms of Service</p>
+          <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight">Clear terms for seamless projects</h1>
+          <p class="text-white/80 text-lg max-w-2xl">Understand how quotations, orders, payments, warranties, and
+            support work when you engage Netplanet Ventures for premium mosquito screens, nets, and blinds.</p>
+          <div class="flex flex-wrap gap-3 pt-2 text-sm text-white/80">
+            <span class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15"><i
+                class="fa-solid fa-file-contract"></i> Fair terms</span>
+            <span class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15"><i
+                class="fa-solid fa-handshake"></i> Mutual clarity</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl bg-white/10 blur-3xl"></div>
+          <div class="relative overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
+            <img src="https://nixsmarketing.com/wp-content/uploads/2024/02/Accept-terms.gif" alt="Business agreement"
+              class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div class="grid lg:grid-cols-2 gap-6">
+          <article class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide">
+              Engagement</div>
+            <h2 class="font-display text-2xl font-bold text-dark">Quotations & orders</h2>
+            <p class="text-slate-700 leading-relaxed">Quotes are based on on-site measurements, specifications, and
+              selected finishes. Orders are confirmed upon written approval and advance payment.</p>
+            <ul class="list-disc list-inside text-slate-700 space-y-2 text-sm">
+              <li>Pricing valid for the stated period; scope changes may revise totals.</li>
+              <li>Custom fabrication begins after receiving agreed advance.</li>
+              <li>Installation dates scheduled post-fabrication and site readiness.</li>
+            </ul>
+          </article>
+
+          <article class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-wide">
+              Payments</div>
+            <h2 class="font-display text-2xl font-bold text-dark">Billing & invoices</h2>
+            <p class="text-slate-700 leading-relaxed">Invoices reflect approved scope, taxes, and delivery schedules.
+              Balances are due on installation completion unless otherwise agreed.</p>
+            <ul class="list-disc list-inside text-slate-700 space-y-2 text-sm">
+              <li>Payment modes accepted as communicated on each invoice.</li>
+              <li>Delayed payments may shift installation dates.</li>
+              <li>Tax invoices provided for all transactions.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+          <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-wide">
+              Site readiness</div>
+            <h3 class="font-display text-xl font-bold text-dark">Access & conditions</h3>
+            <p class="text-slate-700 leading-relaxed text-sm">Clients ensure safe access, power supply, and
+              obstruction-free openings for measurement and installation.</p>
+          </article>
+          <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide">
+              Warranties</div>
+            <h3 class="font-display text-xl font-bold text-dark">Coverage</h3>
+            <p class="text-slate-700 leading-relaxed text-sm">Material and workmanship warranties follow product
+              category and are voided by misuse, alterations, or lack of maintenance.</p>
+          </article>
+          <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-wide">
+              Liability</div>
+            <h3 class="font-display text-xl font-bold text-dark">Limitations</h3>
+            <p class="text-slate-700 leading-relaxed text-sm">Netplanet Ventures is not liable for indirect, incidental,
+              or consequential damages beyond the project value.</p>
+          </article>
+        </div>
+
+        <div class="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide">
+            Support</div>
+          <h3 class="font-display text-xl font-bold text-dark">Service & aftercare</h3>
+          <p class="text-slate-700 leading-relaxed text-sm">Report issues to vishwa559@gmail.com or +91 98453
+            56225. We will assess, schedule service, and resolve under applicable warranty or paid support.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Premium Footer -->
+  <footer class="relative bg-gradient-to-br from-darker via-dark to-slate-900 text-white overflow-hidden">
+    <svg class="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="footer-mesh" width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M0 24V0H24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="0.5" />
+          <path d="M0 0L24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+          <path d="M24 0L0 24" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" />
+        </pattern>
+        <radialGradient id="footer-glow" cx="50%" cy="0%" r="60%">
+          <stop offset="0%" stop-color="rgba(20,184,166,0.25)" />
+          <stop offset="100%" stop-color="rgba(2,6,23,0)" />
+        </radialGradient>
+        <linearGradient id="footer-sheen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.06)" />
+          <stop offset="50%" stop-color="rgba(255,255,255,0.02)" />
+          <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#footer-glow)" />
+      <rect width="100%" height="100%" fill="url(#footer-sheen)" />
+      <rect width="100%" height="100%" fill="url(#footer-mesh)" />
+    </svg>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-6">
+          <a href="/" class="flex items-center gap-3 group">
+            <div class="relative h-12 w-12 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+              <img src="Assets/Logo.jpeg" alt="Netplanet Ventures logo" class="h-full w-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-lg">Netplanet Ventures</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Excellence in mosquito screens, nets, and blinds. Carefully crafted solutions for elegant homes and
+            professional spaces.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#1877F2] transition-colors">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/mosquito_mesh_hubli?utm_source=qr&igsh=MWprcmhtODM4bDZ2YQ=="
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#E1306C] transition-colors">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#FF0000] transition-colors">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://wa.me/919845356225?text=Hi"
+              class="h-10 w-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 text-white hover:text-[#25D366] transition-colors">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/about" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="/products"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Products</a></li>
+            <li><a href="/showroom"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Showroom</a></li>
+            <li><a href="/gallery"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Gallery</a></li>
+            <li><a href="/why-us" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Why Choose Us</a></li>
+            <li><a href="/contact"
+                class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2"><i
+                  class="fa-solid fa-chevron-right text-xs"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-6">Our Products</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <a href="/blog/glide-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glide Fit</li>
+            </a>
+            <a href="/blog/crease-fit-pleated">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Pleated</li>
+            </a>
+            <a href="/blog/crease-fit-ditto">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Crease Fit Ditto</li>
+            </a>
+            <a href="/blog/magnetic-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Magnetic Fit</li>
+            </a>
+            <a href="/blog/ace-door">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Door</li>
+            </a>
+            <a href="/blog/glossy-roll-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Glossy Roll Fit</li>
+            </a>
+            <a href="/blog/ace-window">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Ace Window</li>
+            </a>
+
+            <a href="/blog/classic-window-openable-fit">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Classic Window Openable
+                Fit</li>
+            </a>
+            <a href="/blog/box-frame-classic-window">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Box Frame with Classic
+                Window - Fixed Fit</li>
+            </a>
+            <a href="/blog/pigeon-net">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-primary"></i> Pigeon Net</li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="space-y-6">
+          <h4 class="font-bold text-lg">Get In Touch</h4>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3 text-slate-300">
+              <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+              <span>G-A. 5 Preeti Ashiyana Complex, Shirur Park, Circle, Vidya Nagar, Hubballi, Karnataka 580021</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-phone text-primary"></i>
+              <span>+91 98453 56225</span>
+            </div>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i class="fa-solid fa-envelope text-primary"></i>
+              <span>vishwa559@gmail.com</span>
+            </div>
+          </div>
+          <a href="/contact"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            Book a Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>&copy; 2026 Netplanet Ventures. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <aside
+    class="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 sm:gap-4 p-2 sm:p-3 bg-white/80 backdrop-blur-md shadow-xl rounded-l-2xl border-l border-y border-slate-200">
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Facebook
+      </span>
+      <a href="#" aria-label="Facebook"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#1877F2] text-white shadow-md hover:shadow-[#1877F2]/50">
+        <i class="fa-brands fa-facebook-f text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Instagram
+      </span>
+        <a href="https://www.instagram.com/mosquito_mesh_hubli?utm_source=qr&igsh=MWprcmhtODM4bDZ2YQ==" aria-label="Instagram"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white shadow-md">
+        <i class="fa-brands fa-instagram text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        WhatsApp
+      </span>
+        <a href="https://wa.me/919845356225?text=Hi" aria-label="WhatsApp"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-md hover:shadow-[#25D366]/50">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        YouTube
+      </span>
+      <a href="#" aria-label="YouTube"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-[#FF0000] text-white shadow-md hover:shadow-[#FF0000]/50">
+        <i class="fa-brands fa-youtube text-sm"></i>
+      </a>
+    </div>
+
+    <div class="w-8 h-[1px] bg-slate-300 my-1 mx-auto"></div>
+
+    <div class="social-item group relative flex items-center justify-center">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Email
+      </span>
+      <a href="mailto:vishwa559@gmail.com" aria-label="Email"
+        class="social-icon w-10 h-10 rounded-full flex items-center justify-center bg-slate-800 text-white shadow-md hover:shadow-slate-800/50">
+        <i class="fa-regular fa-envelope text-sm"></i>
+      </a>
+    </div>
+
+    <div class="social-item group relative flex items-center justify-center mt-2">
+      <span
+        class="social-tooltip absolute right-14 bg-slate-800 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
+        Top
+      </span>
+      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to Top"
+        class="social-icon w-8 h-8 rounded-full flex items-center justify-center bg-slate-200 text-slate-600 hover:bg-slate-300 hover:text-slate-900">
+        <i class="fa-solid fa-arrow-up text-xs"></i>
+      </a>
+    </div>
+  </aside>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    const openMobileMenu = () => {
+      mobileMenu.classList.remove('pointer-events-none', 'opacity-0', '-translate-y-2', 'max-h-0');
+      mobileMenu.classList.add('opacity-100', 'translate-y-0', 'max-h-[80vh]');
+      mobileBackdrop.classList.remove('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenu.classList.add('pointer-events-none', 'opacity-0', '-translate-y-2', 'max-h-0');
+      mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'max-h-[80vh]');
+      mobileBackdrop.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    };
+
+    if (menuBtn && mobileMenu && mobileBackdrop) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMobileMenu();
+        }
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card-hover').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    (() => {
+      const currentPath = window.location.pathname === '/' ? '/index' : window.location.pathname;
+      document.querySelectorAll('.header-nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const normalizedHref = href.startsWith('/') ? href : `/${href}`;
+        if (currentPath === normalizedHref || currentPath.endsWith(href)) {
+          link.classList.add('nav-active');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
